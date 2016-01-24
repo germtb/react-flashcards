@@ -1,0 +1,1104 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pp",
+				"props"
+			],
+			[
+				"tag",
+				"taggedData"
+			],
+			[
+				"inde",
+				"indexOf"
+			],
+			[
+				"map",
+				"mappedTags"
+			],
+			[
+				"handle",
+				"handleChange"
+			],
+			[
+				"handl",
+				"handleChange"
+			],
+			[
+				"onSu",
+				"onSubscriptionError"
+			],
+			[
+				"s",
+				"story"
+			],
+			[
+				"forma",
+				"formattedDate"
+			],
+			[
+				"news",
+				"newsJSON"
+			],
+			[
+				"sub",
+				"subscribeToStreamlink"
+			],
+			[
+				"subs",
+				"subscribeToStreamlink"
+			],
+			[
+				"op",
+				"option2"
+			],
+			[
+				"load",
+				"loadingComponent"
+			],
+			[
+				"list",
+				"listNodes"
+			],
+			[
+				"ADD_",
+				"ADD_RESULTS	(reducer.js)"
+			],
+			[
+				"su",
+				"summary"
+			],
+			[
+				"vali",
+				"validURL"
+			],
+			[
+				"parse",
+				"parseNews"
+			],
+			[
+				"pas",
+				"parseReuterString"
+			],
+			[
+				"typ",
+				"typeof"
+			],
+			[
+				"json",
+				"jsonQuery"
+			],
+			[
+				"reve",
+				"reversedData"
+			],
+			[
+				"add",
+				"addElementsToDisplay"
+			],
+			[
+				"e",
+				"entry"
+			],
+			[
+				"exp",
+				"export	(core.js)"
+			],
+			[
+				"nex",
+				"nextState"
+			],
+			[
+				"ne",
+				"nextState"
+			],
+			[
+				"letra",
+				"letraAEncontrada"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 23,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Anaconda Python Builder",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Anaconda Python Builder",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "save",
+		"selected_items":
+		[
+			[
+				"save",
+				"Project: Save As"
+			],
+			[
+				"add",
+				"Project: Add Folder"
+			],
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"new fil",
+				"File: New File Relative to Current View"
+			],
+			[
+				"new",
+				"File: New Folder Relative to Current View"
+			],
+			[
+				"wra",
+				"Word Wrap: Toggle"
+			],
+			[
+				"new f",
+				"File: New File Relative to Project Root"
+			],
+			[
+				"add f",
+				"Project: Add Folder"
+			],
+			[
+				"reind",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"spa",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"trai",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"SPAC",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"tra",
+				"Trailing Spaces: Delete Trailing Spaces"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"jsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"spac",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"fi",
+				"File: Delete"
+			],
+			[
+				"new fi",
+				"File: New File Relative to Current View"
+			],
+			[
+				"xm",
+				"Set Syntax: XML"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"JSX",
+				"Set Syntax: JSX"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"install a",
+				"npm: Install and Save Package"
+			],
+			[
+				"de",
+				"File: Delete"
+			],
+			[
+				"settings",
+				"Preferences: Settings - Default"
+			],
+			[
+				"setting",
+				"Preferences: Terminal Settings – Default"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"add ",
+				"Project: Add Folder"
+			],
+			[
+				"proj cl",
+				"Project: Close"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"keyb",
+				"Preferences: Key Bindings - Default"
+			],
+			[
+				"folder",
+				"File: New Folder Relative to Project Root"
+			],
+			[
+				"fold",
+				"File: New Folder Relative to Current View"
+			],
+			[
+				"open",
+				"File: Open In Browser - Production Server"
+			],
+			[
+				"new fo",
+				"File: New Folder Relative to Current View"
+			],
+			[
+				"Add F",
+				"Project: Add Folder"
+			],
+			[
+				"spaces ",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sapces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"forma",
+				"Format: Javascript"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"npm te",
+				"npm: Run Tests"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"keybi",
+				"Preferences: Key Bindings - User"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"close",
+				"File: Close All"
+			],
+			[
+				"file de",
+				"File: Delete"
+			],
+			[
+				"settingsu",
+				"Preferences: Settings - User"
+			],
+			[
+				"settin",
+				"Preferences: Settings - User"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"proj sa",
+				"Project: Save As"
+			]
+		],
+		"width": 503.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/gmoreno/dev/react-flashcards"
+	],
+	"file_history":
+	[
+		"/Users/gmoreno/dev/react-template/test/test_helper.js",
+		"/Users/gmoreno/dev/react-template/src/index.js",
+		"/Users/gmoreno/dev/react-template/src/components/FlashcardPanel.js",
+		"/Users/gmoreno/dev/react-template/src/reducer.js",
+		"/Users/gmoreno/dev/react-template/webpack.config.js",
+		"/Users/gmoreno/dev/react-template/.gitignore",
+		"/Users/gmoreno/dev/react-template/package.json",
+		"/Users/gmoreno/dev/react-template/dist/index.html",
+		"/Users/gmoreno/Dropbox/Relatos/Desvanecerse.txt",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsTagInput.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/reducer.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsComponentToolbar.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/dist/styles.css",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsSearchResults.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/package.json",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/news.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsList.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/streamlink-news.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsTimestamp.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsSearch.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/sljs/streamlink.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsTagFilter.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/test/reducer_test.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsItem.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/app.js",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/Babel/Babel.sublime-settings",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsHeader.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/store.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/dist/index.html",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/react-tokeninput/example/main.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/react-tokeninput/example/styles.css",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/npm-debug.log",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/test/test_helper.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsReadMore.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsSummary.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsTitle.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/dist/bundle.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/utils.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsPanel.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/src/components/NewsFrame.js",
+		"/Users/gmoreno/dev/gradproject/news-service/.gitignore",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/app.json",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/README.md",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/test/reducer_spec.js",
+		"/Users/gmoreno/dev/gradproject/news-service/react-basic/public/reducer.js",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/Terminal/Terminal.sublime-settings",
+		"/Users/gmoreno/Desktop/wifi.txt",
+		"/Users/gmoreno/dev/voting-client/src/components/App.jsx",
+		"/Users/gmoreno/dev/voting-client/src/components/Results.jsx",
+		"/Users/gmoreno/dev/voting-client/src/index.jsx",
+		"/Users/gmoreno/dev/voting-client/src/components/Winner.jsx",
+		"/Users/gmoreno/dev/voting-client/src/components/Voting.jsx",
+		"/Users/gmoreno/dev/voting-client/test/components/Voting_spec.jsx",
+		"/Users/gmoreno/dev/voting-client/src/components/Vote.jsx",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/gmoreno/dev/voting-client/test/test_helper.js",
+		"/Users/gmoreno/dev/voting-client/package.json",
+		"/Users/gmoreno/dev/voting-client/webpack.config.js",
+		"/Users/gmoreno/dev/voting-client/dist/index.html",
+		"/Users/gmoreno/dev/voting-client/src/index.js",
+		"/Users/gmoreno/dev/voting-server/package.json",
+		"/Users/gmoreno/dev/voting-server/index.js",
+		"/Users/gmoreno/dev/voting-server/src/server.js",
+		"/Users/gmoreno/dev/voting-server/src/components/Voting.jsx",
+		"/Users/gmoreno/dev/voting-server/entries.json",
+		"/Users/gmoreno/dev/voting-server/src/core.js",
+		"/Users/gmoreno/dev/voting-server/src/store.js",
+		"/Users/gmoreno/dev/voting-server/test/core_spec.js",
+		"/Users/gmoreno/dev/voting-server/test/reducer_spec.js",
+		"/Users/gmoreno/dev/voting-server/test/store_spec.js",
+		"/Users/gmoreno/dev/voting-server/src/reducer.js",
+		"/Users/gmoreno/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/gmoreno/dev/react-tutorial/public/scripts/example.js",
+		"/Users/gmoreno/dev/react-tutorial/public/css/base.css",
+		"/Users/gmoreno/Desktop/test.hs",
+		"/Users/gmoreno/dev/react-tutorial/public/scripts/timer.js",
+		"/Users/gmoreno/dev/lua.py",
+		"/Users/gmoreno/tags.txt",
+		"/Users/gmoreno/Downloads/solarized/osx-terminal.app-colors-solarized/README.md"
+	],
+	"find":
+	{
+		"height": 75.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"react-re",
+			"Reuters",
+			"div",
+			"tags",
+			"const ",
+			"taggedData",
+			"inline-fle",
+			"6",
+			"userInput",
+			"news",
+			"null",
+			"\n<<<<<<<",
+			"TokenInput",
+			"NewsTagInput",
+			"NewsSearchContainer",
+			"this.setState({selected",
+			"setState",
+			"handleSele",
+			"indexOf",
+			"\n    ",
+			"indexOf",
+			"ADD_NEWS",
+			"ADD_DATA",
+			"google",
+			"indexOf",
+			"key",
+			"HEAD",
+			"dark",
+			"EMPTY_SEARCH",
+			"  store.dispatch({\n    type: 'ADD_NEWS',\n    news: news\n  });",
+			"dispatch",
+			"debugger",
+			"subscribeToStreamlink",
+			"debugger",
+			"displaytime",
+			"newsJSON",
+			"Reuters",
+			"key",
+			"= ",
+			"parse",
+			"streamlink.subscribe",
+			"var",
+			"streamlink.subscribe",
+			"subscribeToNews",
+			"streamlink.subscribe",
+			"Radium",
+			"handleInpu",
+			"onInput",
+			"handleS",
+			"menuContent",
+			"handleSele",
+			"handleRe",
+			"remove",
+			"filterTags",
+			"handleInput",
+			"filterTa",
+			"tags",
+			"ComboboxOption",
+			"options =",
+			"options",
+			"Names",
+			"names",
+			"Names",
+			"names",
+			"Names",
+			"names",
+			"uni",
+			"name",
+			"handleChange",
+			"filterTags",
+			"uniq",
+			")",
+			"names",
+			"loading",
+			"this.state.loading",
+			"this.props",
+			"},",
+			"handleSele",
+			"handleInp",
+			"handleCha",
+			"loadingCom",
+			"this.state.loa",
+			"isLoa",
+			"={",
+			"lodash",
+			"depen",
+			"function",
+			"dataToDisplay",
+			"app",
+			"App",
+			"react-tokeninput",
+			"Fetching",
+			"data[i]",
+			"data",
+			"this.props.",
+			"mapStateToProps",
+			"{\n        date: \"13:50\",\n        title: \"headline\",\n      }",
+			"{\n      type: 'ADD_NEWS',\n      news: {\n        date: \"13:50\",\n        title: \"headline\",\n      }",
+			"[]",
+			".data.concat",
+			" ",
+			"Map",
+			"{data",
+			"SCROLL_DOWN",
+			"scrip",
+			"<div/>",
+			"ramda",
+			"debugger",
+			" default",
+			"parseNewsJSON",
+			"random",
+			"];\n",
+			"parseString",
+			"newsJSON.news.story[0]",
+			"_headline",
+			"componentWill",
+			"render: function ()",
+			"rever",
+			"connect",
+			"var",
+			"    // console.log(event);",
+			"    console.log(event);",
+			"arr",
+			"var",
+			"NewsListContainer",
+			"NewsList",
+			"setState",
+			"show"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"render: () =>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": ".gitignore",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 23,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								23,
+								23
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
+							],
+							"syntax": "Packages/Material Theme/langs/Git.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 69.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 199.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "react-flashcards.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pac",
+				"package.json"
+			],
+			[
+				"we",
+				"webpack.config.js"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"tes",
+				"test/test_helper.js"
+			],
+			[
+				"web",
+				"webpack.config.js"
+			],
+			[
+				"item",
+				"public/src/components/NewsItem.js"
+			],
+			[
+				"new",
+				"public/src/news.js"
+			],
+			[
+				"stre",
+				"public/src/streamlink-news.js"
+			],
+			[
+				"redu",
+				"public/src/reducer.js"
+			],
+			[
+				"news",
+				"public/src/news.js"
+			],
+			[
+				"search",
+				"public/src/components/NewsSearch.js"
+			],
+			[
+				"comp",
+				"public/src/components/NewsComponentToolbar.js"
+			],
+			[
+				"newsite",
+				"public/src/components/NewsItem.js"
+			],
+			[
+				"sw",
+				"public/src/streamlink-news.js"
+			],
+			[
+				"searchre",
+				"public/src/components/NewsSearchResults.js"
+			],
+			[
+				"compo",
+				"public/src/components/NewsComponentToolbar.js"
+			],
+			[
+				"newssear",
+				"public/src/components/NewsSearch.js"
+			],
+			[
+				"newsli",
+				"public/src/components/NewsList.js"
+			],
+			[
+				"tool",
+				"public/src/components/NewsComponentToolbar.js"
+			],
+			[
+				"tagin",
+				"public/src/components/NewsTagInput.js"
+			],
+			[
+				"strea",
+				"public/src/streamlink-news.js"
+			],
+			[
+				"newslis",
+				"public/src/components/NewsList.js"
+			],
+			[
+				"newsse",
+				"public/src/components/NewsSearch.js"
+			],
+			[
+				"reduce",
+				"public/src/reducer.js"
+			],
+			[
+				"tiem",
+				"public/src/components/NewsTimestamp.js"
+			],
+			[
+				"newsda",
+				"public/src/components/NewsHeader.js"
+			],
+			[
+				"newscomp",
+				"public/src/components/NewsComponentToolbar.js"
+			],
+			[
+				"fra",
+				"public/src/components/NewsFrame.js"
+			],
+			[
+				"reduc",
+				"react-basic/public/src/reducer.js"
+			],
+			[
+				"app",
+				"react-basic/public/src/app.js"
+			],
+			[
+				"newssea",
+				"react-basic/public/src/components/NewsSearch.js"
+			],
+			[
+				"log",
+				"react-basic/npm-debug.log"
+			],
+			[
+				"red",
+				"react-basic/public/src/reducer.js"
+			],
+			[
+				"test",
+				"react-basic/public/test/test_helper.js"
+			],
+			[
+				"paca",
+				"package.json"
+			],
+			[
+				"newssu",
+				"public/src/components/NewsSummary.js"
+			],
+			[
+				"newstitle",
+				"public/src/components/NewsTitle.js"
+			],
+			[
+				"uti",
+				"public/src/utils.js"
+			],
+			[
+				"sear",
+				"public/src/components/NewsSearch.js"
+			],
+			[
+				"ap",
+				"public/src/app.js"
+			],
+			[
+				"searc",
+				"react-basic/public/src/components/NewsSearch.js"
+			],
+			[
+				"appjs",
+				"react-basic/public/src/app.js"
+			],
+			[
+				"neewslis",
+				"news-service/react-basic/public/src/components/NewsList.js"
+			],
+			[
+				"pane",
+				"public/src/components/NewsPanel.js"
+			],
+			[
+				"",
+				"public/src/app.js"
+			],
+			[
+				"app.",
+				"public/src/app.js"
+			],
+			[
+				"list",
+				"public/src/components/NewsList.js"
+			],
+			[
+				"panel",
+				"public/src/components/NewsPanel.js"
+			],
+			[
+				"res",
+				"src/components/Results.jsx"
+			],
+			[
+				"inde",
+				"src/index.jsx"
+			],
+			[
+				"winn",
+				"src/components/Winner.jsx"
+			],
+			[
+				"votin",
+				"src/components/Voting.jsx"
+			],
+			[
+				"vote",
+				"src/components/Vote.jsx"
+			],
+			[
+				"vo",
+				"src/components/Voting.jsx"
+			],
+			[
+				"vot",
+				"test/components/Voting_spec.jsx"
+			],
+			[
+				"weba",
+				"webpack.config.js"
+			],
+			[
+				"ts",
+				"test/test_helper.js"
+			],
+			[
+				"testhe",
+				"test/test_helper.js"
+			],
+			[
+				"packa",
+				"voting-server/package.json"
+			],
+			[
+				"serve",
+				"src/server.js"
+			],
+			[
+				"coresp",
+				"test/core_spec.js"
+			],
+			[
+				"exa",
+				"public/scripts/example.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 354.0,
+		"last_filter": "buil",
+		"selected_items":
+		[
+			[
+				"buil",
+				"buildNews"
+			],
+			[
+				"redu",
+				"reducer"
+			],
+			[
+				"red",
+				"reducer"
+			]
+		],
+		"width": 404.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 279.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
