@@ -1,10 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import FlashcardPanel from './components/FlashcardPanel';
-
-  // (<div> Hello WORLD </div>),
+import AppFrame from './components/AppFrame';
 
 ReactDOM.render(
-  <FlashcardPanel />,
+  <AppFrame />,
   document.getElementById('app')
 );
