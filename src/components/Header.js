@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import style from '../style';
 
 const tableStyle = {
   position: "absolute",
@@ -9,7 +10,7 @@ const tableStyle = {
   top: 0,
   height: 100,
   width: "100%",
-  backgroundColor: "red",
+  backgroundColor: style.headerBackgroundColor,
   overflowX: "auto",
   overflowY: "hidden",
   margin: "auto"
@@ -21,7 +22,7 @@ const horizontalScrollStyle = {
   top: 0,
   height: 100,
   width: "100%",
-  backgroundColor: "red",
+  backgroundColor: style.headerColor,
   overflowX: "auto",
   overflowY: "hidden",
   margin: "auto"

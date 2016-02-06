@@ -2,6 +2,7 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import Flashcard from './Flashcard';
 import FlashcardInput from './FlashcardInput';
+import style from '../style';
 
 const bodyStyle = {
   position: "absolute",
@@ -9,7 +10,7 @@ const bodyStyle = {
   top: 100,
   bottom: 100,
   right: 0,
-  backgroundColor: "blue",
+  backgroundColor: style.backgroundColor,
   overflowY: "scroll"
 };
 

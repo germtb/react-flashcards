@@ -8,7 +8,7 @@ export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
-      <div style={flashcardStyle}> Flashcard </div>
+      <div> Card </div>
     );
   }
 });

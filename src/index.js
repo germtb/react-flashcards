@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppFrame from './components/AppFrame';
+import Frame from './components/Frame';
 
 ReactDOM.render(
-  <AppFrame />,
+  <Frame />,
   document.getElementById('app')
 );

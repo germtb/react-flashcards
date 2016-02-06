@@ -5,7 +5,10 @@ export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
-      <div> Flashcard input </div>
+      <div>
+        <input/>
+        <button type="button">Click Me!</button>
+      </div>
     );
   }
 });
