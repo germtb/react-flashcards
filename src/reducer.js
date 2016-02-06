@@ -1,4 +1,7 @@
-export const INITIAL_STATE = {};
+export const INITIAL_STATE = {
+  correctAnswers: [],
+  wrongAnswers: []
+};
 import R from 'ramda';
 
 // Object.prototype.update = function(key, value) {
@@ -11,13 +14,28 @@ const setCards = function(state, cards) {
 }
 
 const getNext = function(state) {
-  const nextCard = R.take(1, state.cards)[0];
-  const cards = R.drop(1, state.cards);
-  const question = nextCard[0];
-  const answer = nextCard[1];
-  state.question = question;
-  state.answer = answer;
-  state.cards = cards;
+  const nextCard = R.head(state.cards);
+  state.cards = R.drop(1, state.cards);
+  state.question = nextCard[0];
+  state.answer = nextCard[1];
+  return state;
+}
+
+const submitAnswer = function(state, answer) {
+  return answer === state.answer ? submitCorrectAnswer(state) : submitWrongAnswer(state);
+}
+
+const submitCorrectAnswer = function(state) {
+  state.correctAnswers.push([state.question, state.answer]);
+  state.question = 'undefined';
+  state.answer = 'undefined';
+  return state;
+}
+
+const submitWrongAnswer = function(state) {
+  state.wrongAnswers.push([state.question, state.answer]);
+  state.question = 'undefined';
+  state.answer = 'undefined';
   return state;
 }
 
@@ -27,6 +45,8 @@ export const reducer = function(state = INITIAL_STATE, action) {
       return setCards(state, action.cards);
     case 'GET_NEXT':
       return getNext(state);
+    case 'SUBMIT_ANSWER':
+      return submitAnswer(state, action.answer);
     default:
       return state;
   }
