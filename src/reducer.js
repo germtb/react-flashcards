@@ -1,12 +1,9 @@
+import R from 'ramda';
+
 export const INITIAL_STATE = {
   correctAnswers: [],
   wrongAnswers: []
 };
-import R from 'ramda';
-
-// Object.prototype.update = function(key, value) {
-//   return R.set(R.lensProp(key), value, this);
-// };
 
 const setCards = function(state, cards) {
   state.cards = cards;
