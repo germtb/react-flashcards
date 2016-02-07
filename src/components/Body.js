@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import Flashcard from './Flashcard';
-import FlashcardInput from './FlashcardInput';
+import {FlashcardContainer} from './Flashcard';
+import {FlashcardInput} from './FlashcardInput';
 import style from '../style';
 
 const bodyStyle = {
@@ -19,7 +19,7 @@ export default React.createClass({
   render: function() {
     return (
       <div style={bodyStyle}>
-        <Flashcard />
+        <FlashcardContainer />
         <FlashcardInput />
       </div>
     );

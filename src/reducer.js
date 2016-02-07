@@ -12,7 +12,7 @@ const setCards = function(state, cards) {
 
 const getNext = function(state) {
   const nextCard = R.head(state.cards);
-  state.cards = R.drop(1, state.cards);
+  state.cards = R.tail(state.cards);
   state.question = nextCard[0];
   state.answer = nextCard[1];
   return state;
@@ -24,15 +24,15 @@ const submitAnswer = function(state, answer) {
 
 const submitCorrectAnswer = function(state) {
   state.correctAnswers.push([state.question, state.answer]);
-  state.question = 'undefined';
-  state.answer = 'undefined';
+  state.question = undefined;
+  state.answer = undefined;
   return state;
 }
 
 const submitWrongAnswer = function(state) {
   state.wrongAnswers.push([state.question, state.answer]);
-  state.question = 'undefined';
-  state.answer = 'undefined';
+  state.question = undefined;
+  state.answer = undefined;
   return state;
 }
 

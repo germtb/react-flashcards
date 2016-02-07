@@ -1,14 +1,22 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export default React.createClass({
+var answer = '';
+
+export const FlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
       <div>
-        <input/>
-        <button type="button">Click Me!</button>
+        <input onChange={i => answer = i}/>
+        <button type="button"> Enter </button>
       </div>
     );
   }
 });
+
+function mapStateToProps(state) {
+  return {
+    question: state.question
+  }
+}

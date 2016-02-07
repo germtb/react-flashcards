@@ -49,8 +49,8 @@ describe('reducer', () => {
     expect(nextState.correctAnswers).to.deep.equal([
       ["Hello", "こんにちは"]
     ]);
-    expect(nextState.question).to.equal('undefined');
-    expect(nextState.answer).to.equal('undefined');
+    expect(nextState.question).to.equal(undefined);
+    expect(nextState.answer).to.equal(undefined);
   });
 
   it('handles wrong SUBMIT_ANSWER', () => {
@@ -65,8 +65,8 @@ describe('reducer', () => {
     expect(nextState.wrongAnswers).to.deep.equal([
       ["Hello", "こんにちは"]
     ]);
-    expect(nextState.question).to.equal('undefined');
-    expect(nextState.answer).to.equal('undefined');
+    expect(nextState.question).to.equal(undefined);
+    expect(nextState.answer).to.equal(undefined);
   });
 
 });
