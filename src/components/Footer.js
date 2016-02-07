@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import style from '../style';
 
 const footerStyle = {
   position: "absolute",
@@ -8,7 +9,7 @@ const footerStyle = {
   bottom: 0,
   height: 100,
   width: "100%",
-  backgroundColor: "red",
+  backgroundColor: style.footerBackgroundColor,
 };
 
 export default React.createClass({

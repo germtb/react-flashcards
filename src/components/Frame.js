@@ -16,7 +16,7 @@ export default React.createClass({
   render: function() {
     return (
       <div style={panelStyle}>
-        <Header /
+        <Header />
         <Body />
         <Footer />
       </div>

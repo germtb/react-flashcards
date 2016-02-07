@@ -1,7 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import Flashcard from './Flashcard';
-import FlashcardInput from './FlashcardInput';
+import {FlashcardContainer} from './Flashcard';
+import {FlashcardInput} from './FlashcardInput';
+import style from '../style';
 
 const bodyStyle = {
   position: "absolute",
@@ -9,7 +10,7 @@ const bodyStyle = {
   top: 100,
   bottom: 100,
   right: 0,
-  backgroundColor: "blue",
+  backgroundColor: style.backgroundColor,
   overflowY: "scroll"
 };
 
@@ -18,7 +19,7 @@ export default React.createClass({
   render: function() {
     return (
       <div style={bodyStyle}>
-        <Flashcard />
+        <FlashcardContainer />
         <FlashcardInput />
       </div>
     );
