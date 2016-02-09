@@ -5,7 +5,7 @@ import Frame from './components/Frame';
 import {reducer} from './reducer';
 import {createStore} from 'redux';
 
-const store = createStore(reducer);
+export const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
