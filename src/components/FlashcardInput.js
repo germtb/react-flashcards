@@ -1,21 +1,22 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {store} from '../index';
-var answer = '';
 
 export const FlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   submitAnswer: function() {
     store.dispatch({
-      type: 'SUBMIT_ANSWER',
-      answer: answer,
+      type: 'SUBMIT_ANSWER'
     });
     store.dispatch({
       type: 'GET_NEXT',
     });
   },
   handleChange: function (event) {
-    answer = event.target.value;
+    store.dispatch({
+      type: 'SUBMIT_ANSWER',
+      input: event.target.value;
+    });
   },
   render: function() {
     return (

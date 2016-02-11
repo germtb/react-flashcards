@@ -18,8 +18,8 @@ const getNext = function(state) {
   return state;
 }
 
-const submitAnswer = function(state, answer) {
-  return answer === state.answer ? submitCorrectAnswer(state) : submitWrongAnswer(state);
+const submitAnswer = function(state) {
+  return state.input === state.answer ? submitCorrectAnswer(state) : submitWrongAnswer(state);
 }
 
 const submitCorrectAnswer = function(state) {
@@ -36,6 +36,11 @@ const submitWrongAnswer = function(state) {
   return state;
 }
 
+const setInput = function(state, input) {
+  state.input = input;
+  return state;
+}
+
 export const reducer = function(state = INITIAL_STATE, action) {
   switch (action.type) {
     case 'SET_CARDS':
@@ -43,7 +48,9 @@ export const reducer = function(state = INITIAL_STATE, action) {
     case 'GET_NEXT':
       return getNext(state);
     case 'SUBMIT_ANSWER':
-      return submitAnswer(state, action.answer);
+      return submitAnswer(state);
+    case 'SET_INPUT':
+      return setInput(state, action.input);
     default:
       return state;
   }
