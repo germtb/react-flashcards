@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {FlashcardContainer} from './Flashcard';
 import {FlashcardInput} from './FlashcardInput';
 import style from '../style';
+import {store} from '../index';
 
 const bodyStyle = {
   position: 'absolute',
@@ -16,6 +17,22 @@ const bodyStyle = {
 
 export default React.createClass({
   mixins: [PureRenderMixin],
+  loadCards: function() {
+    store.dispatch({
+      type: 'SET_CARDS',
+      cards: [
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら']
+      ]
+    });
+
+    store.dispatch({
+      type:'GET_NEXT'
+    });
+  },
+  componentWillMount: function() {
+    this.loadCards();
+  },
   render: function() {
     return (
       <div style={bodyStyle}>

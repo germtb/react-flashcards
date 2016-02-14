@@ -13,15 +13,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('app')
 );
-
-store.dispatch({
-  type: 'SET_CARDS',
-  cards: [
-    ['Hello', 'こんにちは'],
-    ['Bye', 'さようなら']
-  ]
-});
-
-store.dispatch({
-  type:'GET_NEXT'
-});
