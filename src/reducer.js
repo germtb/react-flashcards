@@ -13,7 +13,7 @@ const setCards = function(state, cards) {
 
 const getNext = function(state) {
   if (state.cards.length === 0) {
-    return state;
+    return Object.assign({}, state);
   }
   return Object.assign({}, state, {
     cards: R.tail(state.cards),
