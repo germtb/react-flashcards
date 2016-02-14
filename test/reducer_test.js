@@ -39,11 +39,11 @@ describe('reducer', () => {
 
   it('handles correct SUBMIT_ANSWER', () => {
     const initialState = INITIAL_STATE;
-    initialState.question = "Hello";
-    initialState.answer = "こんにちは";
+    initialState.question = 'Hello';
+    initialState.answer = 'こんにちは';
+    initialState.input = 'こんにちは';
     const action = {
-      type: 'SUBMIT_ANSWER',
-      answer: 'こんにちは'
+      type: 'SUBMIT_ANSWER'
     };
     const nextState = reducer(initialState, action);
     expect(nextState.correctAnswers).to.deep.equal([
@@ -57,9 +57,9 @@ describe('reducer', () => {
     const initialState = INITIAL_STATE;
     initialState.question = "Hello";
     initialState.answer = "こんにちは";
+    initialState.input = 'さようなら';
     const action = {
-      type: 'SUBMIT_ANSWER',
-      answer: 'さようなら'
+      type: 'SUBMIT_ANSWER'
     };
     const nextState = reducer(initialState, action);
     expect(nextState.wrongAnswers).to.deep.equal([
@@ -68,5 +68,15 @@ describe('reducer', () => {
     expect(nextState.question).to.equal(undefined);
     expect(nextState.answer).to.equal(undefined);
   });
+
+  it('handles SET_INPUT', () => {
+    const initialState = INITIAL_STATE;
+    const action = {
+      type: 'SET_INPUT',
+      input: 'unicorns'
+    };
+    const nextState = reducer(initialState, action);
+    expect(nextState.input).to.equal('unicorns');
+  })
 
 });
