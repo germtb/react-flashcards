@@ -43,15 +43,15 @@ const setInput = function(state, input) {
 
 export const reducer = function(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case 'SET_CARDS':
-      return setCards(state, action.cards);
-    case 'GET_NEXT':
-      return getNext(state);
-    case 'SUBMIT_ANSWER':
-      return submitAnswer(state);
-    case 'SET_INPUT':
-      return setInput(state, action.input);
-    default:
-      return state;
+  case 'SET_CARDS':
+    return setCards(state, action.cards);
+  case 'GET_NEXT':
+    return getNext(state);
+  case 'SUBMIT_ANSWER':
+    return submitAnswer(state);
+  case 'SET_INPUT':
+    return setInput(state, action.input);
+  default:
+    return state;
   }
 }

@@ -15,7 +15,7 @@ export const FlashcardInput = React.createClass({
   handleChange: function (event) {
     store.dispatch({
       type: 'SUBMIT_ANSWER',
-      input: event.target.value;
+      input: event.target.value
     });
   },
   render: function() {
