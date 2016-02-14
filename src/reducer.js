@@ -31,7 +31,8 @@ const submitCorrectAnswer = function(state) {
     correctAnswers: [...state.correctAnswers, [state.question, state.answer]],
     question: undefined,
     answer: undefined
-});}
+  });
+}
 
 const submitWrongAnswer = function(state) {
   return Object.assign({}, state, {
