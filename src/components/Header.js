@@ -3,17 +3,17 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import style from '../style';
 
 const tableStyle = {
-  position: "absolute",
-  float: "left",
+  position: 'absolute',
+  float: 'left',
   left: 0,
   right: 0,
   top: 0,
   height: 100,
-  width: "100%",
+  width: '100%',
   backgroundColor: style.headerBackgroundColor,
-  overflowX: "auto",
-  overflowY: "hidden",
-  margin: "auto"
+  overflowX: 'auto',
+  overflowY: 'hidden',
+  margin: 'auto'
 }
 
 const horizontalScrollStyle = {
@@ -21,19 +21,19 @@ const horizontalScrollStyle = {
   right: 0,
   top: 0,
   height: 100,
-  width: "100%",
+  width: '100%',
   backgroundColor: style.headerColor,
-  overflowX: "auto",
-  overflowY: "hidden",
-  margin: "auto"
+  overflowX: 'auto',
+  overflowY: 'hidden',
+  margin: 'auto'
 }
 
 const itemStyle = {
-  float: "left",
-  position: "relative",
-  width: "25%",
+  float: 'left',
+  position: 'relative',
+  width: '25%',
   height: 30,
-  textAlign: "center",
+  textAlign: 'center',
 };
 
 export default React.createClass({

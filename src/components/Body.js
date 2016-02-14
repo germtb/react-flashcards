@@ -5,13 +5,13 @@ import {FlashcardInput} from './FlashcardInput';
 import style from '../style';
 
 const bodyStyle = {
-  position: "absolute",
+  position: 'absolute',
   left: 0,
   top: 100,
   bottom: 100,
   right: 0,
   backgroundColor: style.backgroundColor,
-  overflowY: "scroll"
+  overflowY: 'scroll'
 };
 
 export default React.createClass({

@@ -17,8 +17,8 @@ ReactDOM.render(
 store.dispatch({
   type: 'SET_CARDS',
   cards: [
-    ["Hello", "こんにちは"],
-    ["Bye", "さようなら"]
+    ['Hello', 'こんにちは'],
+    ['Bye', 'さようなら']
   ]
 });
 

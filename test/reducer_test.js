@@ -10,29 +10,29 @@ describe('reducer', () => {
     const action = {
       type: 'SET_CARDS',
       cards: [
-        ["Hello", "こんにちは"],
-        ["Bye", "さようなら"]
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら']
       ]
     };
     const nextState = reducer(initialState, action);
     expect(nextState.cards).to.deep.equal([
-      ["Hello", "こんにちは"],
-      ["Bye", "さようなら"]
+      ['Hello', 'こんにちは'],
+      ['Bye', 'さようなら']
     ]);
   });
 
   it('handles GET_NEXT', () => {
     const initialState = INITIAL_STATE;
     initialState.cards = [
-        ["Hello", "こんにちは"],
-        ["Bye", "さようなら"]
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら']
     ];
     const action = {
       type: 'GET_NEXT'
     };
     const nextState = reducer(initialState, action);
     expect(nextState.cards).to.deep.equal([
-      ["Bye", "さようなら"]
+      ['Bye', 'さようなら']
     ]);
     expect(nextState.question).to.equal('Hello');
   });
@@ -47,7 +47,7 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
     expect(nextState.correctAnswers).to.deep.equal([
-      ["Hello", "こんにちは"]
+      ['Hello', 'こんにちは']
     ]);
     expect(nextState.question).to.equal(undefined);
     expect(nextState.answer).to.equal(undefined);
@@ -55,15 +55,15 @@ describe('reducer', () => {
 
   it('handles wrong SUBMIT_ANSWER', () => {
     const initialState = INITIAL_STATE;
-    initialState.question = "Hello";
-    initialState.answer = "こんにちは";
+    initialState.question = 'Hello';
+    initialState.answer = 'こんにちは';
     initialState.input = 'さようなら';
     const action = {
       type: 'SUBMIT_ANSWER'
     };
     const nextState = reducer(initialState, action);
     expect(nextState.wrongAnswers).to.deep.equal([
-      ["Hello", "こんにちは"]
+      ['Hello', 'こんにちは']
     ]);
     expect(nextState.question).to.equal(undefined);
     expect(nextState.answer).to.equal(undefined);
