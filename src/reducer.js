@@ -6,16 +6,20 @@ export const INITIAL_STATE = {
 };
 
 const setCards = function(state, cards) {
-  state.cards = cards;
-  return state;
+  return Object.assign({}, state, {
+    cards: cards
+  });
 }
 
 const getNext = function(state) {
-  const nextCard = R.head(state.cards);
-  state.cards = R.tail(state.cards);
-  state.question = nextCard[0];
-  state.answer = nextCard[1];
-  return state;
+  if (state.cards.length === 0) {
+    return state;
+  }
+  return Object.assign({}, state, {
+    cards: R.tail(state.cards),
+    question: R.head(state.cards)[0],
+    answer: R.head(state.cards)[1]
+  });
 }
 
 const submitAnswer = function(state) {
@@ -23,22 +27,24 @@ const submitAnswer = function(state) {
 }
 
 const submitCorrectAnswer = function(state) {
-  state.correctAnswers.push([state.question, state.answer]);
-  state.question = undefined;
-  state.answer = undefined;
-  return state;
-}
+  return Object.assign({}, state, {
+    correctAnswers: [...state.correctAnswers, [state.question, state.answer]],
+    question: undefined,
+    answer: undefined
+});}
 
 const submitWrongAnswer = function(state) {
-  state.wrongAnswers.push([state.question, state.answer]);
-  state.question = undefined;
-  state.answer = undefined;
-  return state;
+  return Object.assign({}, state, {
+    wrongAnswers: [...state.wrongAnswers, [state.question, state.answer]],
+    question: undefined,
+    answer: undefined
+  });
 }
 
 const setInput = function(state, input) {
-  state.input = input;
-  return state;
+  return Object.assign({}, state, {
+    input: input
+  });
 }
 
 export const reducer = function(state = INITIAL_STATE, action) {

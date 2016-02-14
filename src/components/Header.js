@@ -36,7 +36,7 @@ const itemStyle = {
   textAlign: 'center',
 };
 
-export default React.createClass({
+export const Header = React.createClass({
   mixins: [PureRenderMixin],
   onClick: function (event) {
     console.log(event);
@@ -46,9 +46,6 @@ export default React.createClass({
       <div style={tableStyle}>
         <div style={horizontalScrollStyle}>
           <div onClick={this.onClick} style={itemStyle}> Option 1 </div>
-          <div onClick={this.onClick} style={itemStyle}> Option 2 </div>
-          <div onClick={this.onClick} style={itemStyle}> Option 3 </div>
-          <div onClick={this.onClick} style={itemStyle}> Option 4 </div>
         </div>
       </div>
     );

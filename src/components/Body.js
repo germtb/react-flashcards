@@ -2,6 +2,8 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {FlashcardContainer} from './Flashcard';
 import {FlashcardInput} from './FlashcardInput';
+import {connect} from 'react-redux';
+import {FlashcardScoreContainer} from './FlashcardScore';
 import style from '../style';
 import {store} from '../index';
 
@@ -15,7 +17,7 @@ const bodyStyle = {
   overflowY: 'scroll'
 };
 
-export default React.createClass({
+export const Body = React.createClass({
   mixins: [PureRenderMixin],
   loadCards: function() {
     store.dispatch({
@@ -34,11 +36,27 @@ export default React.createClass({
     this.loadCards();
   },
   render: function() {
-    return (
-      <div style={bodyStyle}>
+    const nextCard = (
+      <div>
         <FlashcardContainer />
         <FlashcardInput />
       </div>
     );
+    const result = (
+        <FlashcardScoreContainer />
+    );
+    return (
+      <div style={bodyStyle}>
+        {this.props.question === undefined ? result : nextCard}
+      </div>
+    );
   }
 });
+
+function mapStateToProps(state) {
+  return {
+    question: state.question
+  };
+}
+
+export const BodyContainer = connect(mapStateToProps)(Body);

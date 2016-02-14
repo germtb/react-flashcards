@@ -12,7 +12,7 @@ const footerStyle = {
   backgroundColor: style.footerBackgroundColor,
 };
 
-export default React.createClass({
+export const Footer = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (

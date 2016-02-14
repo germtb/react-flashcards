@@ -1,8 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import Header from './Header';
-import Footer from './Footer';
-import Body from './Body';
+import {Header} from './Header';
+import {Footer} from './Footer';
+import {BodyContainer} from './Body';
 
 const panelStyle = {
   left: 0,
@@ -17,7 +17,7 @@ export default React.createClass({
     return (
       <div style={panelStyle}>
         <Header />
-        <Body />
+        <BodyContainer />
         <Footer />
       </div>
     );
