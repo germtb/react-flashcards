@@ -58,6 +58,8 @@ export const reducer = function(state = INITIAL_STATE, action) {
     return submitAnswer(state);
   case 'SET_INPUT':
     return setInput(state, action.input);
+  case 'RESET':
+    return INITIAL_STATE;
   default:
     return state;
   }

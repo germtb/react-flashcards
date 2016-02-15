@@ -5,7 +5,6 @@ import {store} from '../index';
 export const FlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   submitAnswer: function() {
-    console.log('Submitting input');
     store.dispatch({
       type: 'SUBMIT_ANSWER'
     });
