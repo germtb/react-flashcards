@@ -13,7 +13,12 @@ export const FlashcardInput = React.createClass({
       type: 'GET_NEXT',
     });
   },
-  handleChange: function (event) {
+  handleKeyDown: function(event) {
+    if (event.keyCode === 13) {
+      this.submitAnswer();
+    }
+  },
+  handleChange: function(event) {
     store.dispatch({
       type: 'SET_INPUT',
       input: event.target.value
@@ -22,7 +27,7 @@ export const FlashcardInput = React.createClass({
   render: function() {
     return (
       <div>
-        <input onChange={this.handleChange} value={this.props.input}/>
+        <input onKeyDown={this.handleKeyDown} onChange={this.handleChange} value={this.props.input} autoFocus={true}/>
         <button onClick={this.submitAnswer}> Enter </button>
       </div>
     );
