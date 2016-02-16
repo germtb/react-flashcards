@@ -3,6 +3,18 @@ import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {store} from '../index';
 
+const outerDivStyle = {
+  display: "flex",
+  justifyContent: "center"
+};
+
+const inputStyle = {
+  "float": "left",
+  "width": "300px",
+  "height": "60px",
+  "fontSize": "25",
+};
+
 export const FlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   submitAnswer: function() {
@@ -26,9 +38,8 @@ export const FlashcardInput = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <input onKeyDown={this.handleKeyDown} onChange={this.handleChange} value={this.props.input} autoFocus={true}/>
-        <button onClick={this.submitAnswer}> Enter </button>
+      <div style={outerDivStyle}>
+          <input style={inputStyle} onKeyDown={this.handleKeyDown} onChange={this.handleChange} value={this.props.input} autoFocus={true}/>
       </div>
     );
   }
