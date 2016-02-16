@@ -51,6 +51,7 @@ describe('reducer', () => {
     ]);
     expect(nextState.question).to.equal(undefined);
     expect(nextState.answer).to.equal(undefined);
+    expect(nextState.input).to.equal(undefined);
   });
 
   it('handles wrong SUBMIT_ANSWER', () => {
@@ -67,6 +68,7 @@ describe('reducer', () => {
     ]);
     expect(nextState.question).to.equal(undefined);
     expect(nextState.answer).to.equal(undefined);
+    expect(nextState.input).to.equal(undefined);
   });
 
   it('handles SET_INPUT', () => {

@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {store} from '../index';
 
@@ -21,9 +22,17 @@ export const FlashcardInput = React.createClass({
   render: function() {
     return (
       <div>
-        <input onChange={this.handleChange}/>
+        <input onChange={this.handleChange} value={this.props.input}/>
         <button onClick={this.submitAnswer}> Enter </button>
       </div>
     );
   }
 });
+
+function mapStateToProps(state) {
+  return {
+    input: state.input
+  };
+}
+
+export const FlashcardInputContainer = connect(mapStateToProps)(FlashcardInput);

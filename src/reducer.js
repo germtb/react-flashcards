@@ -30,7 +30,8 @@ const submitCorrectAnswer = function(state) {
   return Object.assign({}, state, {
     correctAnswers: [...state.correctAnswers, [state.question, state.answer]],
     question: undefined,
-    answer: undefined
+    answer: undefined,
+    input: undefined
   });
 }
 
@@ -38,7 +39,8 @@ const submitWrongAnswer = function(state) {
   return Object.assign({}, state, {
     wrongAnswers: [...state.wrongAnswers, [state.question, state.answer]],
     question: undefined,
-    answer: undefined
+    answer: undefined,
+    input: undefined
   });
 }
 

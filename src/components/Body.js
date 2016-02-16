@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {FlashcardContainer} from './Flashcard';
-import {FlashcardInput} from './FlashcardInput';
+import {FlashcardInputContainer} from './FlashcardInput';
 import {connect} from 'react-redux';
 import {FlashcardScoreContainer} from './FlashcardScore';
 import style from '../style';
@@ -39,7 +39,7 @@ export const Body = React.createClass({
     const nextCard = (
       <div>
         <FlashcardContainer />
-        <FlashcardInput />
+        <FlashcardInputContainer />
       </div>
     );
     const result = (
