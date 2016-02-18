@@ -1,11 +1,11 @@
 const style = {
-  backgroundColor: '#FDFEFF',
+  backgroundColor: '#FDFFFF',
   fontColor: '#000000',
 
-  footerBackgroundColor: '#718DA5',
+  footerBackgroundColor: '#7F8DA5',
   footerFontColor: '#000000',
 
-  headerBackgroundColor: '#718DA5',
+  headerBackgroundColor: '#7F8DA5',
   headerFontColor: '#000000',
 };
 
