@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "node": true,
@@ -12,6 +13,9 @@
     "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
     "indent": [2, 2],
     "quotes": [2, "single"],
-    "no-trailing-spaces": [2, { "skipBlankLines": true }]
+    "no-trailing-spaces": [2, { "skipBlankLines": true }],
+    "no-unused-vars": 2,
+    "semi": [2, "always"],
+    "strict": 0
   }
 }
