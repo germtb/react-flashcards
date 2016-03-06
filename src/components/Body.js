@@ -17,6 +17,15 @@ const bodyStyle = {
   overflowY: 'scroll'
 };
 
+const outerDivButtonStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+};
+
+const buttonStyle = {
+  fontSize: '30'
+}
+
 export const Body = React.createClass({
   mixins: [PureRenderMixin],
   loadCards: function() {
@@ -36,6 +45,18 @@ export const Body = React.createClass({
       type:'GET_NEXT'
     });
   },
+  tryAgain: function() {
+    store.dispatch({
+      type:'RESET'
+    });
+    store.dispatch({
+      type: 'SET_CARDS',
+      cards: this.props.wrongAnswers
+    });
+    store.dispatch({
+      type:'GET_NEXT'
+    });
+  },
   componentWillMount: function() {
     this.loadCards();
   },
@@ -47,7 +68,12 @@ export const Body = React.createClass({
       </div>
     );
     const result = (
+      <div>
         <FlashcardScoreContainer />
+        <div style={outerDivButtonStyle}>
+          <button style={buttonStyle} onClick={this.tryAgain}> Try again </button>
+        </div>
+      </div>
     );
     return (
       <div style={bodyStyle}>
@@ -59,7 +85,8 @@ export const Body = React.createClass({
 
 function mapStateToProps(state) {
   return {
-    question: state.question
+    question: state.question,
+    wrongAnswers: state.wrongAnswers
   };
 }
 

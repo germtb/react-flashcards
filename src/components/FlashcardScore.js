@@ -3,28 +3,20 @@ import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {store} from '../index';
 
+const style = {
+  display: 'flex',
+  justifyContent: 'center',
+  fontSize: '75',
+};
+
 export const FlashcardScore = React.createClass({
   mixins: [PureRenderMixin],
-  tryAgain: function() {
-    store.dispatch({
-      type:'RESET'
-    });
-    store.dispatch({
-      type: 'SET_CARDS',
-      cards: this.props.wrongAnswers
-    });
-    store.dispatch({
-      type:'GET_NEXT'
-    });
-  },
   render: function() {
     const correctAnswers = this.props.correctAnswers.length;
     const totalAnswers = this.props.wrongAnswers.length + correctAnswers;
     return (
-      <div>
-        <div> {'You got: ' + correctAnswers.toString() + '/' + totalAnswers.toString()} </div>
-        <button onClick={this.tryAgain}> Try again </button>
-      </div>);
+      <div style={style}> {correctAnswers.toString() + '/' + totalAnswers.toString()} </div>
+    );
   }
 });
 
