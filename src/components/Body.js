@@ -24,7 +24,11 @@ export const Body = React.createClass({
       type: 'SET_CARDS',
       cards: [
         ['Hello', 'こんにちは'],
-        ['Bye', 'さようなら']
+        ['Bye', 'さようなら'],
+        ['Caca', 'Unicornio'],
+        ['Culo', 'Caca zafiro'],
+        ['Pedo', 'さようなら'],
+        ['Pis', 'さようなら'],
       ]
     });
 
