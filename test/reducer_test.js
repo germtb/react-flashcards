@@ -79,6 +79,6 @@ describe('reducer', () => {
     };
     const nextState = reducer(initialState, action);
     expect(nextState.input).to.equal('unicorns');
-  })
+  });
 
 });
