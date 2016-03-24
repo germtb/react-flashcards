@@ -28,23 +28,6 @@ const buttonStyle = {
 
 export const Body = React.createClass({
   mixins: [PureRenderMixin],
-  loadCards: function() {
-    store.dispatch({
-      type: 'SET_CARDS',
-      cards: [
-        ['Hello', 'こんにちは'],
-        ['Bye', 'さようなら'],
-        ['Caca', 'Unicornio'],
-        ['Culo', 'Caca zafiro'],
-        ['Pedo', 'さようなら'],
-        ['Pis', 'さようなら'],
-      ]
-    });
-
-    store.dispatch({
-      type:'GET_NEXT'
-    });
-  },
   tryAgain: function() {
     store.dispatch({
       type:'RESET'
@@ -56,9 +39,6 @@ export const Body = React.createClass({
     store.dispatch({
       type:'GET_NEXT'
     });
-  },
-  componentWillMount: function() {
-    this.loadCards();
   },
   render: function() {
     const nextCard = (
