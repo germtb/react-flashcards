@@ -2,7 +2,8 @@ import R from 'ramda';
 
 export const INITIAL_STATE = {
   correctAnswers: [],
-  wrongAnswers: []
+  wrongAnswers: [],
+  menu: 0
 };
 
 const setCards = function(state, cards) {
@@ -50,6 +51,12 @@ const setInput = function(state, input) {
   });
 }
 
+const setMenu = function(state, menu) {
+  return Object.assign({}, state, {
+    menu: menu
+  });
+}
+
 export const reducer = function(state = INITIAL_STATE, action) {
   switch (action.type) {
   case 'SET_CARDS':
@@ -62,6 +69,8 @@ export const reducer = function(state = INITIAL_STATE, action) {
     return setInput(state, action.input);
   case 'RESET':
     return INITIAL_STATE;
+  case 'SET_MENU':
+    return setMenu(state, action.menu);
   default:
     return state;
   }

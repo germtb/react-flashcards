@@ -81,4 +81,14 @@ describe('reducer', () => {
     expect(nextState.input).to.equal('unicorns');
   });
 
+  it('handles SET_MENU', () => {
+    const initialState = INITIAL_STATE;
+    const action = {
+      type: 'SET_MENU',
+      menu: 1
+    };
+    const nextState = reducer(initialState, action);
+    expect(nextState.menu).to.equal(1);
+  });
+
 });
