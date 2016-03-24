@@ -1,9 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {FlashcardContainer} from './Flashcard';
-import {FlashcardInputContainer} from './FlashcardInput';
+import {FlashcardMenuContainer} from './FlashcardMenu';
 import {connect} from 'react-redux';
-import {FlashcardScoreContainer} from './FlashcardScore';
 import style from '../style';
 import {store} from '../index';
 
@@ -41,32 +39,18 @@ export const Body = React.createClass({
     });
   },
   render: function() {
-    const nextCard = (
-      <div>
-        <FlashcardContainer />
-        <FlashcardInputContainer />
-      </div>
-    );
-    const result = (
-      <div>
-        <FlashcardScoreContainer />
-        <div style={outerDivButtonStyle}>
-          <button style={buttonStyle} onClick={this.tryAgain}> Try again </button>
-        </div>
-      </div>
-    );
-    return (
-      <div style={bodyStyle}>
-        {this.props.question === undefined ? result : nextCard}
-      </div>
-    );
+    switch (this.props.menu) {
+    case 0:
+      return (<FlashcardMenuContainer/>);
+    default:
+      return (<div> NO MENU </div>);
+    }
   }
 });
 
 function mapStateToProps(state) {
   return {
-    question: state.question,
-    wrongAnswers: state.wrongAnswers
+    menu: state.menu
   };
 }
 
