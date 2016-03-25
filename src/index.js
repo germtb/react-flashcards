@@ -29,3 +29,20 @@ store.dispatch({
 store.dispatch({
   type:'GET_NEXT'
 });
+
+for (let i = 0; i < 4; i++) {
+  store.dispatch({
+    type: 'ADD_DECK',
+    deck: {
+      cards: [
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら'],
+        ['Caca', 'Unicornio'],
+        ['Culo', 'Caca zafiro'],
+        ['Pedo', 'さようなら'],
+        ['Pis', 'さようなら'],
+      ],
+      name: i
+    }
+  });
+}

@@ -93,19 +93,25 @@ describe('reducer', () => {
 
   it('handles ADD_DECK', () => {
     const initialState = INITIAL_STATE;
-    const deck = [
-      ['Hello', 'こんにちは'],
-      ['Bye', 'さようなら']
-    ];
+    const deck = {
+      cards: [
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら']
+      ],
+      name: 'Simple words'
+    };
     const action = {
       type: 'ADD_DECK',
       deck: deck
     };
     const nextState = reducer(initialState, action);
-    expect(nextState.decks[0]).to.deep.equal([
-      ['Hello', 'こんにちは'],
-      ['Bye', 'さようなら']
-    ]);
+    expect(nextState.decks[0]).to.deep.equal({
+      cards: [
+        ['Hello', 'こんにちは'],
+        ['Bye', 'さようなら']
+      ],
+      name: 'Simple words'
+    });
   });
 
 });
