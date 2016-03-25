@@ -1,6 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {QuizMenuContainer} from './QuizMenu';
+import {CreateDeckMenu} from './CreateDeckMenu';
 import {DecksMenuContainer} from './DecksMenu';
 import {connect} from 'react-redux';
 
@@ -11,9 +12,9 @@ export const Body = React.createClass({
     case 0:
       return (<QuizMenuContainer/>);
     case 1:
-      return (<div> MENU 1 </div>);
+      return (<CreateDeckMenu/>);
     case 2:
-      return (<DecksMenuContainer/>);
+      return (<DecksMenuContainer flashcardsCount={10}/>);
     default:
       return (<div> NO MENU </div>);
     }

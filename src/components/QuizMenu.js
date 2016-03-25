@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 import style from '../style';
 import {store} from '../index';
 
-const QuizMenuStyle = {
+const quizMenuStyle = {
   position: 'absolute',
   left: 0,
   top: 100,
@@ -56,7 +56,7 @@ export const QuizMenu = React.createClass({
       </div>
     );
     return (
-      <div style={QuizMenuStyle}>
+      <div style={quizMenuStyle}>
         {this.props.question === undefined ? result : nextCard}
       </div>
     );

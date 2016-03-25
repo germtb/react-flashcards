@@ -22,6 +22,6 @@ export const Deck = React.createClass({
         <div> {cards} </div>
         <div> ------- </div>
       </div>
-      );
+    );
   }
 });
