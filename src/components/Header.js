@@ -33,8 +33,8 @@ const horizontalScrollStyle = {
 const itemStyle = {
   float: 'left',
   position: 'relative',
-  width: '33%',
-  height: 30,
+  width: '25%',
+  height: '100%',
   textAlign: 'center',
   fontSize: '30',
   backgroundColor: 'red',
@@ -44,26 +44,23 @@ const selectedItemStyle = Object.assign({}, itemStyle, {
   backgroundColor: 'blue'
 });
 
-export const Header = React.createClass({
+const HeaderCell = React.createClass({
   mixins: [PureRenderMixin],
-  onClick: function (menu) {
+  onClick: function () {
     store.dispatch({
       type: 'SET_MENU',
-      menu: menu
+      menu: this.props.index
     });
+  },
+  styleSelector: function () {
+    return this.props.menu === this.props.index ? selectedItemStyle : itemStyle;
   },
   render: function() {
     return (
-      <div style={tableStyle}>
-        <div style={horizontalScrollStyle}>
-          <div onClick={_ => this.onClick(0)} style={this.props.menu === 0 ? selectedItemStyle : itemStyle}> Decks </div>
-          <div onClick={_ => this.onClick(1)} style={this.props.menu === 1 ? selectedItemStyle : itemStyle}> Create a deck </div>
-          <div onClick={_ => this.onClick(2)} style={this.props.menu === 2 ? selectedItemStyle : itemStyle}> About </div>
-        </div>
-      </div>
+      <div onClick={this.onClick} style={this.styleSelector()}> {this.props.title} </div>
     );
   }
-});
+})
 
 function mapStateToProps(state) {
   return {
@@ -71,4 +68,20 @@ function mapStateToProps(state) {
   };
 }
 
-export const HeaderContainer = connect(mapStateToProps)(Header);
+const HeaderCellContainer = connect(mapStateToProps)(HeaderCell);
+
+export const Header = React.createClass({
+  mixins: [PureRenderMixin],
+  render: function() {
+    return (
+      <div style={tableStyle}>
+        <div style={horizontalScrollStyle}>
+          <HeaderCellContainer index={0} title={"Quiz"}/>
+          <HeaderCellContainer index={1} title={"Create a deck"}/>
+          <HeaderCellContainer index={2} title={"Decks"}/>
+          <HeaderCellContainer index={3} title={"About"}/>
+        </div>
+      </div>
+    );
+  }
+});
