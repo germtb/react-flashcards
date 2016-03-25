@@ -13,7 +13,6 @@ const cardStyle = {
 export const Deck = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    debugger;
     const cards = this.props.cards.map(c => (
         <span style={cardStyle} key={c[0]}> {c[0] + ': ' + c[1]} </span>
     ));
