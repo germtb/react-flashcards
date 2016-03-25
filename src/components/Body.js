@@ -1,16 +1,15 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {FlashcardMenuContainer} from './FlashcardMenu';
+import {QuizMenuContainer} from './QuizMenu';
 import {DecksMenuContainer} from './DecksMenu';
 import {connect} from 'react-redux';
-import style from '../style';
 
 export const Body = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     switch (this.props.menu) {
     case 0:
-      return (<FlashcardMenuContainer/>);
+      return (<QuizMenuContainer/>);
     case 1:
       return (<div> MENU 1 </div>);
     case 2:
@@ -21,4 +20,4 @@ export const Body = React.createClass({
   }
 });
 
-export const BodyContainer = connect(s => {return {menu:s.menu}})(Body);
+export const BodyContainer = connect(s => {return {menu:s.menu};})(Body);

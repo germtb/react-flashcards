@@ -1,8 +1,8 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Header} from './Header';
-import {Footer} from './Footer';
 import {BodyContainer} from './Body';
+import {Footer} from './Footer';
 
 const panelStyle = {
   left: 0,

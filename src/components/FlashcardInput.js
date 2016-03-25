@@ -4,15 +4,15 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {store} from '../index';
 
 const outerDivStyle = {
-  display: "flex",
-  justifyContent: "center"
+  display: 'flex',
+  justifyContent: 'center'
 };
 
 const inputStyle = {
-  "float": "left",
-  "width": "300px",
-  "height": "60px",
-  "fontSize": "25",
+  'float': 'left',
+  'width': '300px',
+  'height': '60px',
+  'fontSize': '25',
 };
 
 export const FlashcardInput = React.createClass({
@@ -39,10 +39,14 @@ export const FlashcardInput = React.createClass({
   render: function() {
     return (
       <div style={outerDivStyle}>
-          <input style={inputStyle} onKeyDown={this.handleKeyDown} onChange={this.handleChange} value={this.props.input} autoFocus={true}/>
+          <input style={inputStyle}
+                 onKeyDown={this.handleKeyDown}
+                 onChange={this.handleChange}
+                 value={this.props.input}
+                 autoFocus={true}/>
       </div>
     );
   }
 });
 
-export const FlashcardInputContainer = connect(s => {return {input: s.input}})(FlashcardInput);
+export const FlashcardInputContainer = connect(s => {return {input: s.input};})(FlashcardInput);

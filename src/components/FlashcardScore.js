@@ -1,7 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {store} from '../index';
 
 const style = {
   display: 'flex',
@@ -20,14 +19,7 @@ export const FlashcardScore = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    correctAnswers: state.correctAnswers,
-    wrongAnswers: state.wrongAnswers
-  };
-}
-
 export const FlashcardScoreContainer = connect(s => {return {
   correctAnswers: s.correctAnswers,
   wrongAnswers: s.wrongAnswers
-}})(FlashcardScore);
+};})(FlashcardScore);

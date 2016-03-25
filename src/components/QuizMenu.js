@@ -2,12 +2,12 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {FlashcardContainer} from './Flashcard';
 import {FlashcardInputContainer} from './FlashcardInput';
-import {connect} from 'react-redux';
 import {FlashcardScoreContainer} from './FlashcardScore';
+import {connect} from 'react-redux';
 import style from '../style';
 import {store} from '../index';
 
-const flashcardMenuStyle = {
+const QuizMenuStyle = {
   position: 'absolute',
   left: 0,
   top: 100,
@@ -24,9 +24,9 @@ const outerDivButtonStyle = {
 
 const buttonStyle = {
   fontSize: '30'
-}
+};
 
-export const FlashcardMenu = React.createClass({
+export const QuizMenu = React.createClass({
   mixins: [PureRenderMixin],
   tryAgain: function() {
     store.dispatch({
@@ -56,21 +56,14 @@ export const FlashcardMenu = React.createClass({
       </div>
     );
     return (
-      <div style={flashcardMenuStyle}>
+      <div style={QuizMenuStyle}>
         {this.props.question === undefined ? result : nextCard}
       </div>
     );
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    question: state.question,
-    wrongAnswers: state.wrongAnswers
-  };
-}
-
-export const FlashcardMenuContainer = connect(s => {return {
+export const QuizMenuContainer = connect(s => {return {
   question:s.question,
   wrongAnswers: s.wrongAnswers
-}})(FlashcardMenu);
+};})(QuizMenu);

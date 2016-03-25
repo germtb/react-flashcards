@@ -16,7 +16,7 @@ const tableStyle = {
   overflowX: 'auto',
   overflowY: 'hidden',
   margin: 'auto'
-}
+};
 
 const horizontalScrollStyle = {
   left: 0,
@@ -28,7 +28,7 @@ const horizontalScrollStyle = {
   overflowX: 'auto',
   overflowY: 'hidden',
   margin: 'auto'
-}
+};
 
 const itemStyle = {
   float: 'left',
@@ -60,9 +60,9 @@ const HeaderCell = React.createClass({
       <div onClick={this.onClick} style={this.styleSelector()}> {this.props.title} </div>
     );
   }
-})
+});
 
-const HeaderCellContainer = connect(s => {return {menu:s.menu}})(HeaderCell);
+const HeaderCellContainer = connect(s => {return {menu:s.menu};})(HeaderCell);
 
 export const Header = React.createClass({
   mixins: [PureRenderMixin],

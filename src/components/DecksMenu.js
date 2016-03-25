@@ -1,9 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {FlashcardMenuContainer} from './FlashcardMenu';
 import {Deck} from './Deck';
 import {connect} from 'react-redux';
-import style from '../style';
 
 export const DecksMenu = React.createClass({
   mixins: [PureRenderMixin],
@@ -13,4 +11,4 @@ export const DecksMenu = React.createClass({
   }
 });
 
-export const DecksMenuContainer = connect(s => {return {decks:s.decks}})(DecksMenu);
+export const DecksMenuContainer = connect(s => {return {decks:s.decks};})(DecksMenu);

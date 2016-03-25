@@ -11,7 +11,7 @@ const setCards = function(state, cards) {
   return Object.assign({}, state, {
     cards: cards
   });
-}
+};
 
 const getNext = function(state) {
   if (state.cards.length === 0) {
@@ -22,11 +22,11 @@ const getNext = function(state) {
     question: R.head(state.cards)[0],
     answer: R.head(state.cards)[1]
   });
-}
+};
 
 const submitAnswer = function(state) {
   return state.input === state.answer ? submitCorrectAnswer(state) : submitWrongAnswer(state);
-}
+};
 
 const submitCorrectAnswer = function(state) {
   return Object.assign({}, state, {
@@ -35,7 +35,7 @@ const submitCorrectAnswer = function(state) {
     answer: undefined,
     input: undefined
   });
-}
+};
 
 const submitWrongAnswer = function(state) {
   return Object.assign({}, state, {
@@ -44,25 +44,25 @@ const submitWrongAnswer = function(state) {
     answer: undefined,
     input: undefined
   });
-}
+};
 
 const setInput = function(state, input) {
   return Object.assign({}, state, {
     input: input
   });
-}
+};
 
 const setMenu = function(state, menu) {
   return Object.assign({}, state, {
     menu: menu
   });
-}
+};
 
 const addDeck = function(state, deck) {
   return Object.assign({}, state, {
     decks: [...state.decks, deck]
   });
-}
+};
 
 export const reducer = function(state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -83,4 +83,4 @@ export const reducer = function(state = INITIAL_STATE, action) {
   default:
     return state;
   }
-}
+};
