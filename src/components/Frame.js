@@ -11,7 +11,7 @@ const panelStyle = {
   height: '100%',
 };
 
-export default React.createClass({
+export const Frame = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
