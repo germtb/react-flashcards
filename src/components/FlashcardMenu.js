@@ -70,4 +70,7 @@ function mapStateToProps(state) {
   };
 }
 
-export const FlashcardMenuContainer = connect(mapStateToProps)(FlashcardMenu);
+export const FlashcardMenuContainer = connect(s => {return {
+  question:s.question,
+  wrongAnswers: s.wrongAnswers
+}})(FlashcardMenu);

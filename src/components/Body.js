@@ -21,10 +21,4 @@ export const Body = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    menu: state.menu
-  };
-}
-
-export const BodyContainer = connect(mapStateToProps)(Body);
+export const BodyContainer = connect(s => {return {menu:s.menu}})(Body);

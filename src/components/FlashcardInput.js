@@ -45,10 +45,4 @@ export const FlashcardInput = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    input: state.input
-  };
-}
-
-export const FlashcardInputContainer = connect(mapStateToProps)(FlashcardInput);
+export const FlashcardInputContainer = connect(s => {return {input: s.input}})(FlashcardInput);

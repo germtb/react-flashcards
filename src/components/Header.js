@@ -62,13 +62,7 @@ const HeaderCell = React.createClass({
   }
 })
 
-function mapStateToProps(state) {
-  return {
-    menu: state.menu
-  };
-}
-
-const HeaderCellContainer = connect(mapStateToProps)(HeaderCell);
+const HeaderCellContainer = connect(s => {return {menu:s.menu}})(HeaderCell);
 
 export const Header = React.createClass({
   mixins: [PureRenderMixin],

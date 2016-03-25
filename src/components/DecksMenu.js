@@ -13,10 +13,4 @@ export const DecksMenu = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    decks: state.decks
-  };
-}
-
-export const DecksMenuContainer = connect(mapStateToProps)(DecksMenu);
+export const DecksMenuContainer = connect(s => {return {decks:s.decks}})(DecksMenu);

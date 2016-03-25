@@ -18,10 +18,4 @@ export const Flashcard = React.createClass({
   }
 });
 
-function mapStateToProps(state) {
-  return {
-    question: state.question
-  };
-}
-
-export const FlashcardContainer = connect(mapStateToProps)(Flashcard);
+export const FlashcardContainer = connect(s => {return {question:s.question}})(Flashcard);

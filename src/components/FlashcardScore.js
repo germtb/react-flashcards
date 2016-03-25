@@ -27,4 +27,7 @@ function mapStateToProps(state) {
   };
 }
 
-export const FlashcardScoreContainer = connect(mapStateToProps)(FlashcardScore);
+export const FlashcardScoreContainer = connect(s => {return {
+  correctAnswers: s.correctAnswers,
+  wrongAnswers: s.wrongAnswers
+}})(FlashcardScore);
