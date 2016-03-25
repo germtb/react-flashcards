@@ -54,7 +54,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "36951a2d5e526790a231"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9c8e7082de154efe2eb9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8058,7 +8058,7 @@
 
 	var _Frame2 = _interopRequireDefault(_Frame);
 
-	var _reducer = __webpack_require__(290);
+	var _reducer = __webpack_require__(291);
 
 	var _redux = __webpack_require__(250);
 
@@ -8071,6 +8071,15 @@
 	  { store: store },
 	  _react2.default.createElement(_Frame2.default, null)
 	), document.getElementById('app'));
+
+	store.dispatch({
+	  type: 'SET_CARDS',
+	  cards: [['Hello', 'こんにちは'], ['Bye', 'さようなら'], ['Caca', 'Unicornio'], ['Culo', 'Caca zafiro'], ['Pedo', 'さようなら'], ['Pis', 'さようなら']]
+	});
+
+	store.dispatch({
+	  type: 'GET_NEXT'
+	});
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(268); if (makeExportsHot(module, __webpack_require__(139))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "index.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
@@ -29359,7 +29368,7 @@
 	    return _react2.default.createElement(
 	      'div',
 	      { style: panelStyle },
-	      _react2.default.createElement(_Header.Header, null),
+	      _react2.default.createElement(_Header.HeaderContainer, null),
 	      _react2.default.createElement(_Body.BodyContainer, null),
 	      _react2.default.createElement(_Footer.Footer, null)
 	    );
@@ -29466,7 +29475,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Header = undefined;
+	exports.HeaderContainer = exports.Header = undefined;
 
 	var _react = __webpack_require__(139);
 
@@ -29479,6 +29488,10 @@
 	var _style = __webpack_require__(267);
 
 	var _style2 = _interopRequireDefault(_style);
+
+	var _index = __webpack_require__(76);
+
+	var _reactRedux = __webpack_require__(244);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29514,17 +29527,27 @@
 	  width: '33%',
 	  height: 30,
 	  textAlign: 'center',
-	  fontSize: '30'
+	  fontSize: '30',
+	  backgroundColor: 'red'
 	};
+
+	var selectedItemStyle = Object.assign({}, itemStyle, {
+	  backgroundColor: 'blue'
+	});
 
 	var Header = exports.Header = _react2.default.createClass({
 	  displayName: 'Header',
 
 	  mixins: [_reactAddonsPureRenderMixin2.default],
-	  onClick: function onClick(event) {
-	    console.log(event);
+	  onClick: function onClick(menu) {
+	    _index.store.dispatch({
+	      type: 'SET_MENU',
+	      menu: menu
+	    });
 	  },
 	  render: function render() {
+	    var _this = this;
+
 	    return _react2.default.createElement(
 	      'div',
 	      { style: tableStyle },
@@ -29533,23 +29556,37 @@
 	        { style: horizontalScrollStyle },
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.onClick, style: itemStyle },
-	          ' Browse flashcard decks '
+	          { onClick: function onClick(_) {
+	              return _this.onClick(0);
+	            }, style: this.props.menu === 0 ? selectedItemStyle : itemStyle },
+	          ' Decks '
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.onClick, style: itemStyle },
-	          ' Create your own flashcard deck '
+	          { onClick: function onClick(_) {
+	              return _this.onClick(1);
+	            }, style: this.props.menu === 1 ? selectedItemStyle : itemStyle },
+	          ' Create a deck '
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { onClick: this.onClick, style: itemStyle },
+	          { onClick: function onClick(_) {
+	              return _this.onClick(2);
+	            }, style: this.props.menu === 2 ? selectedItemStyle : itemStyle },
 	          ' About '
 	        )
 	      )
 	    );
 	  }
 	});
+
+	function mapStateToProps(state) {
+	  return {
+	    menu: state.menu
+	  };
+	}
+
+	var HeaderContainer = exports.HeaderContainer = (0, _reactRedux.connect)(mapStateToProps)(Header);
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(268); if (makeExportsHot(module, __webpack_require__(139))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "Header.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
@@ -29782,68 +29819,37 @@
 
 	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
 
-	var _Flashcard = __webpack_require__(273);
-
-	var _FlashcardInput = __webpack_require__(288);
+	var _FlashcardMenu = __webpack_require__(273);
 
 	var _reactRedux = __webpack_require__(244);
-
-	var _FlashcardScore = __webpack_require__(289);
 
 	var _style = __webpack_require__(267);
 
 	var _style2 = _interopRequireDefault(_style);
 
-	var _index = __webpack_require__(76);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var bodyStyle = {
-	  position: 'absolute',
-	  left: 0,
-	  top: 100,
-	  bottom: 100,
-	  right: 0,
-	  backgroundColor: _style2.default.backgroundColor,
-	  overflowY: 'scroll'
-	};
 
 	var Body = exports.Body = _react2.default.createClass({
 	  displayName: 'Body',
 
 	  mixins: [_reactAddonsPureRenderMixin2.default],
-	  loadCards: function loadCards() {
-	    _index.store.dispatch({
-	      type: 'SET_CARDS',
-	      cards: [['Hello', 'こんにちは'], ['Bye', 'さようなら'], ['Caca', 'Unicornio'], ['Culo', 'Caca zafiro'], ['Pedo', 'さようなら'], ['Pis', 'さようなら']]
-	    });
-
-	    _index.store.dispatch({
-	      type: 'GET_NEXT'
-	    });
-	  },
-	  componentWillMount: function componentWillMount() {
-	    this.loadCards();
-	  },
 	  render: function render() {
-	    var nextCard = _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(_Flashcard.FlashcardContainer, null),
-	      _react2.default.createElement(_FlashcardInput.FlashcardInputContainer, null)
-	    );
-	    var result = _react2.default.createElement(_FlashcardScore.FlashcardScoreContainer, null);
-	    return _react2.default.createElement(
-	      'div',
-	      { style: bodyStyle },
-	      this.props.question === undefined ? result : nextCard
-	    );
+	    switch (this.props.menu) {
+	      case 0:
+	        return _react2.default.createElement(_FlashcardMenu.FlashcardMenuContainer, null);
+	      default:
+	        return _react2.default.createElement(
+	          'div',
+	          null,
+	          ' NO MENU '
+	        );
+	    }
 	  }
 	});
 
 	function mapStateToProps(state) {
 	  return {
-	    question: state.question
+	    menu: state.menu
 	  };
 	}
 
@@ -29854,6 +29860,119 @@
 
 /***/ },
 /* 273 */
+/***/ function(module, exports, __webpack_require__) {
+
+	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(139); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	exports.FlashcardMenuContainer = exports.FlashcardMenu = undefined;
+
+	var _react = __webpack_require__(139);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactAddonsPureRenderMixin = __webpack_require__(263);
+
+	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
+
+	var _Flashcard = __webpack_require__(274);
+
+	var _FlashcardInput = __webpack_require__(289);
+
+	var _reactRedux = __webpack_require__(244);
+
+	var _FlashcardScore = __webpack_require__(290);
+
+	var _style = __webpack_require__(267);
+
+	var _style2 = _interopRequireDefault(_style);
+
+	var _index = __webpack_require__(76);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var flashcardMenuStyle = {
+	  position: 'absolute',
+	  left: 0,
+	  top: 100,
+	  bottom: 100,
+	  right: 0,
+	  backgroundColor: _style2.default.backgroundColor,
+	  overflowY: 'scroll'
+	};
+
+	var outerDivButtonStyle = {
+	  display: 'flex',
+	  justifyContent: 'center'
+	};
+
+	var buttonStyle = {
+	  fontSize: '30'
+	};
+
+	var FlashcardMenu = exports.FlashcardMenu = _react2.default.createClass({
+	  displayName: 'FlashcardMenu',
+
+	  mixins: [_reactAddonsPureRenderMixin2.default],
+	  tryAgain: function tryAgain() {
+	    _index.store.dispatch({
+	      type: 'RESET'
+	    });
+	    _index.store.dispatch({
+	      type: 'SET_CARDS',
+	      cards: this.props.wrongAnswers
+	    });
+	    _index.store.dispatch({
+	      type: 'GET_NEXT'
+	    });
+	  },
+	  render: function render() {
+	    var nextCard = _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_Flashcard.FlashcardContainer, null),
+	      _react2.default.createElement(_FlashcardInput.FlashcardInputContainer, null)
+	    );
+	    var result = _react2.default.createElement(
+	      'div',
+	      null,
+	      _react2.default.createElement(_FlashcardScore.FlashcardScoreContainer, null),
+	      _react2.default.createElement(
+	        'div',
+	        { style: outerDivButtonStyle },
+	        _react2.default.createElement(
+	          'button',
+	          { style: buttonStyle, onClick: this.tryAgain },
+	          ' Try again '
+	        )
+	      )
+	    );
+	    return _react2.default.createElement(
+	      'div',
+	      { style: flashcardMenuStyle },
+	      this.props.question === undefined ? result : nextCard
+	    );
+	  }
+	});
+
+	function mapStateToProps(state) {
+	  return {
+	    question: state.question,
+	    wrongAnswers: state.wrongAnswers
+	  };
+	}
+
+	var FlashcardMenuContainer = exports.FlashcardMenuContainer = (0, _reactRedux.connect)(mapStateToProps)(FlashcardMenu);
+
+	/* REACT HOT LOADER */ }).call(this); } finally { if (true) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = __webpack_require__(268); if (makeExportsHot(module, __webpack_require__(139))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot not apply hot update to " + "FlashcardMenu.js" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
+
+/***/ },
+/* 274 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(139); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -29875,19 +29994,14 @@
 
 	var _reactAddonsPureRenderMixin2 = _interopRequireDefault(_reactAddonsPureRenderMixin);
 
-	var _reactMotion = __webpack_require__(274);
+	var _reactMotion = __webpack_require__(275);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var outerDivStyle = {
-	  display: "flex",
-	  justifyContent: "center",
-	  WebkitTransform: "translate3d(${x}px, 0, 0)",
-	  transform: "translate3d(${x}px, 0, 0)"
-	};
-
 	var style = {
-	  "fontSize": "75"
+	  display: 'flex',
+	  justifyContent: 'center',
+	  fontSize: '75'
 	};
 
 	var Flashcard = exports.Flashcard = _react2.default.createClass({
@@ -29895,25 +30009,12 @@
 
 	  mixins: [_reactAddonsPureRenderMixin2.default],
 	  render: function render() {
-	    var _this = this;
-
 	    return _react2.default.createElement(
-	      _reactMotion.Motion,
-	      { style: { x: (0, _reactMotion.spring)(this.props.question ? 400 : 0) } },
-	      function (_ref) {
-	        var x = _ref.x;
-	        return _react2.default.createElement(
-	          'div',
-	          { style: outerDivStyle },
-	          _react2.default.createElement(
-	            'div',
-	            { style: style },
-	            ' ',
-	            _this.props.question,
-	            ' '
-	          )
-	        );
-	      }
+	      'div',
+	      { style: style },
+	      ' ',
+	      this.props.question,
+	      ' '
 	    );
 	  }
 	});
@@ -29930,7 +30031,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 274 */
+/* 275 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29939,34 +30040,34 @@
 
 	function _interopRequire(obj) { return obj && obj.__esModule ? obj['default'] : obj; }
 
-	var _Motion = __webpack_require__(275);
+	var _Motion = __webpack_require__(276);
 
 	exports.Motion = _interopRequire(_Motion);
 
-	var _StaggeredMotion = __webpack_require__(282);
+	var _StaggeredMotion = __webpack_require__(283);
 
 	exports.StaggeredMotion = _interopRequire(_StaggeredMotion);
 
-	var _TransitionMotion = __webpack_require__(283);
+	var _TransitionMotion = __webpack_require__(284);
 
 	exports.TransitionMotion = _interopRequire(_TransitionMotion);
 
-	var _spring = __webpack_require__(285);
+	var _spring = __webpack_require__(286);
 
 	exports.spring = _interopRequire(_spring);
 
-	var _presets = __webpack_require__(286);
+	var _presets = __webpack_require__(287);
 
 	exports.presets = _interopRequire(_presets);
 
 	// deprecated, dummy warning function
 
-	var _reorderKeys = __webpack_require__(287);
+	var _reorderKeys = __webpack_require__(288);
 
 	exports.reorderKeys = _interopRequire(_reorderKeys);
 
 /***/ },
-/* 275 */
+/* 276 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -29977,27 +30078,27 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _mapToZero = __webpack_require__(276);
+	var _mapToZero = __webpack_require__(277);
 
 	var _mapToZero2 = _interopRequireDefault(_mapToZero);
 
-	var _stripStyle = __webpack_require__(277);
+	var _stripStyle = __webpack_require__(278);
 
 	var _stripStyle2 = _interopRequireDefault(_stripStyle);
 
-	var _stepper3 = __webpack_require__(278);
+	var _stepper3 = __webpack_require__(279);
 
 	var _stepper4 = _interopRequireDefault(_stepper3);
 
-	var _performanceNow = __webpack_require__(279);
+	var _performanceNow = __webpack_require__(280);
 
 	var _performanceNow2 = _interopRequireDefault(_performanceNow);
 
-	var _raf = __webpack_require__(280);
+	var _raf = __webpack_require__(281);
 
 	var _raf2 = _interopRequireDefault(_raf);
 
-	var _shouldStopAnimation = __webpack_require__(281);
+	var _shouldStopAnimation = __webpack_require__(282);
 
 	var _shouldStopAnimation2 = _interopRequireDefault(_shouldStopAnimation);
 
@@ -30212,7 +30313,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 276 */
+/* 277 */
 /***/ function(module, exports) {
 
 	
@@ -30236,7 +30337,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 277 */
+/* 278 */
 /***/ function(module, exports) {
 
 	
@@ -30262,7 +30363,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 278 */
+/* 279 */
 /***/ function(module, exports) {
 
 	
@@ -30310,7 +30411,7 @@
 	// array reference around.
 
 /***/ },
-/* 279 */
+/* 280 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {// Generated by CoffeeScript 1.7.1
@@ -30349,10 +30450,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ },
-/* 280 */
+/* 281 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var now = __webpack_require__(279)
+	var now = __webpack_require__(280)
 	  , global = typeof window === 'undefined' ? {} : window
 	  , vendors = ['moz', 'webkit']
 	  , suffix = 'AnimationFrame'
@@ -30423,7 +30524,7 @@
 
 
 /***/ },
-/* 281 */
+/* 282 */
 /***/ function(module, exports) {
 
 	
@@ -30459,7 +30560,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 282 */
+/* 283 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30470,27 +30571,27 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _mapToZero = __webpack_require__(276);
+	var _mapToZero = __webpack_require__(277);
 
 	var _mapToZero2 = _interopRequireDefault(_mapToZero);
 
-	var _stripStyle = __webpack_require__(277);
+	var _stripStyle = __webpack_require__(278);
 
 	var _stripStyle2 = _interopRequireDefault(_stripStyle);
 
-	var _stepper3 = __webpack_require__(278);
+	var _stepper3 = __webpack_require__(279);
 
 	var _stepper4 = _interopRequireDefault(_stepper3);
 
-	var _performanceNow = __webpack_require__(279);
+	var _performanceNow = __webpack_require__(280);
 
 	var _performanceNow2 = _interopRequireDefault(_performanceNow);
 
-	var _raf = __webpack_require__(280);
+	var _raf = __webpack_require__(281);
 
 	var _raf2 = _interopRequireDefault(_raf);
 
-	var _shouldStopAnimation = __webpack_require__(281);
+	var _shouldStopAnimation = __webpack_require__(282);
 
 	var _shouldStopAnimation2 = _interopRequireDefault(_shouldStopAnimation);
 
@@ -30726,7 +30827,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 283 */
+/* 284 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -30737,31 +30838,31 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _mapToZero = __webpack_require__(276);
+	var _mapToZero = __webpack_require__(277);
 
 	var _mapToZero2 = _interopRequireDefault(_mapToZero);
 
-	var _stripStyle = __webpack_require__(277);
+	var _stripStyle = __webpack_require__(278);
 
 	var _stripStyle2 = _interopRequireDefault(_stripStyle);
 
-	var _stepper3 = __webpack_require__(278);
+	var _stepper3 = __webpack_require__(279);
 
 	var _stepper4 = _interopRequireDefault(_stepper3);
 
-	var _mergeDiff = __webpack_require__(284);
+	var _mergeDiff = __webpack_require__(285);
 
 	var _mergeDiff2 = _interopRequireDefault(_mergeDiff);
 
-	var _performanceNow = __webpack_require__(279);
+	var _performanceNow = __webpack_require__(280);
 
 	var _performanceNow2 = _interopRequireDefault(_performanceNow);
 
-	var _raf = __webpack_require__(280);
+	var _raf = __webpack_require__(281);
 
 	var _raf2 = _interopRequireDefault(_raf);
 
-	var _shouldStopAnimation = __webpack_require__(281);
+	var _shouldStopAnimation = __webpack_require__(282);
 
 	var _shouldStopAnimation2 = _interopRequireDefault(_shouldStopAnimation);
 
@@ -31219,7 +31320,7 @@
 	// that you've unmounted but that's still animating. This is where it lives
 
 /***/ },
-/* 284 */
+/* 285 */
 /***/ function(module, exports) {
 
 	
@@ -31332,7 +31433,7 @@
 	// to loop through and find a key's index each time), but I no longer care
 
 /***/ },
-/* 285 */
+/* 286 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -31345,7 +31446,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _presets = __webpack_require__(286);
+	var _presets = __webpack_require__(287);
 
 	var _presets2 = _interopRequireDefault(_presets);
 
@@ -31360,7 +31461,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 286 */
+/* 287 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -31375,7 +31476,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 287 */
+/* 288 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -31398,7 +31499,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ },
-/* 288 */
+/* 289 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(139); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -31480,7 +31581,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 289 */
+/* 290 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(139); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -31506,40 +31607,25 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	var style = {
+	  display: 'flex',
+	  justifyContent: 'center',
+	  fontSize: '75'
+	};
+
 	var FlashcardScore = exports.FlashcardScore = _react2.default.createClass({
 	  displayName: 'FlashcardScore',
 
 	  mixins: [_reactAddonsPureRenderMixin2.default],
-	  tryAgain: function tryAgain() {
-	    _index.store.dispatch({
-	      type: 'RESET'
-	    });
-	    _index.store.dispatch({
-	      type: 'SET_CARDS',
-	      cards: this.props.wrongAnswers
-	    });
-	    _index.store.dispatch({
-	      type: 'GET_NEXT'
-	    });
-	  },
 	  render: function render() {
 	    var correctAnswers = this.props.correctAnswers.length;
 	    var totalAnswers = this.props.wrongAnswers.length + correctAnswers;
 	    return _react2.default.createElement(
 	      'div',
-	      null,
-	      _react2.default.createElement(
-	        'div',
-	        null,
-	        ' ',
-	        'You got: ' + correctAnswers.toString() + '/' + totalAnswers.toString(),
-	        ' '
-	      ),
-	      _react2.default.createElement(
-	        'button',
-	        { onClick: this.tryAgain },
-	        ' Try again '
-	      )
+	      { style: style },
+	      ' ',
+	      correctAnswers.toString() + '/' + totalAnswers.toString(),
+	      ' '
 	    );
 	  }
 	});
@@ -31557,7 +31643,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 290 */
+/* 291 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(module) {/* REACT HOT LOADER */ if (true) { (function () { var ReactHotAPI = __webpack_require__(77), RootInstanceProvider = __webpack_require__(85), ReactMount = __webpack_require__(87), React = __webpack_require__(139); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -31569,7 +31655,7 @@
 	});
 	exports.reducer = exports.INITIAL_STATE = undefined;
 
-	var _ramda = __webpack_require__(291);
+	var _ramda = __webpack_require__(292);
 
 	var _ramda2 = _interopRequireDefault(_ramda);
 
@@ -31579,7 +31665,9 @@
 
 	var INITIAL_STATE = exports.INITIAL_STATE = {
 	  correctAnswers: [],
-	  wrongAnswers: []
+	  wrongAnswers: [],
+	  menu: 0,
+	  decks: []
 	};
 
 	var setCards = function setCards(state, cards) {
@@ -31627,6 +31715,18 @@
 	  });
 	};
 
+	var setMenu = function setMenu(state, menu) {
+	  return Object.assign({}, state, {
+	    menu: menu
+	  });
+	};
+
+	var addDeck = function addDeck(state, deck) {
+	  return Object.assign({}, state, {
+	    decks: [].concat(_toConsumableArray(state.decks), [deck])
+	  });
+	};
+
 	var reducer = exports.reducer = function reducer() {
 	  var state = arguments.length <= 0 || arguments[0] === undefined ? INITIAL_STATE : arguments[0];
 	  var action = arguments[1];
@@ -31642,6 +31742,10 @@
 	      return setInput(state, action.input);
 	    case 'RESET':
 	      return INITIAL_STATE;
+	    case 'SET_MENU':
+	      return setMenu(state, action.menu);
+	    case 'ADD_DECK':
+	      return addDeck(state, action.deck);
 	    default:
 	      return state;
 	  }
@@ -31651,7 +31755,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(4)(module)))
 
 /***/ },
-/* 291 */
+/* 292 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//  Ramda v0.19.1
