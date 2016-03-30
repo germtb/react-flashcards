@@ -16,7 +16,7 @@ export const Footer = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
-      <div style={footerStyle}> Footer </div>
+      <div style={footerStyle}/>
     );
   }
 });

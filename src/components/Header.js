@@ -12,7 +12,6 @@ const tableStyle = {
   top: 0,
   height: 100,
   width: '100%',
-  backgroundColor: style.headerBackgroundColor,
   overflowX: 'auto',
   overflowY: 'hidden',
   margin: 'auto'
@@ -37,11 +36,11 @@ const itemStyle = {
   height: '100%',
   textAlign: 'center',
   fontSize: '30',
-  backgroundColor: 'red',
+  backgroundColor: style.headerBackgroundColor,
 };
 
 const selectedItemStyle = Object.assign({}, itemStyle, {
-  backgroundColor: 'blue'
+  backgroundColor: 'white'
 });
 
 const HeaderCell = React.createClass({
@@ -72,7 +71,7 @@ export const Header = React.createClass({
         <div style={horizontalScrollStyle}>
           <HeaderCellContainer index={0} title={"Quiz"}/>
           <HeaderCellContainer index={1} title={"Create a deck"}/>
-          <HeaderCellContainer index={2} title={"Decks"}/>
+          <HeaderCellContainer index={2} title={"Pick a deck"}/>
           <HeaderCellContainer index={3} title={"About"}/>
         </div>
       </div>

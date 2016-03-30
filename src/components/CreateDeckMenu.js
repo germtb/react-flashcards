@@ -2,6 +2,8 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import style from '../style';
 
+
+
 const decksMenuStyle = {
   position: 'absolute',
   left: 0,
@@ -12,7 +14,13 @@ const decksMenuStyle = {
   overflowY: 'scroll'
 };
 
+const outerDivStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+};
+
 const newFlashcardLeftInputStyle = {
+  left: 0
 };
 
 const newFlashcardRightInputStyle = {
@@ -40,10 +48,10 @@ export const CreateDeckMenu = React.createClass({
       <div style={decksMenuStyle}>
         {newFlashcards}
         <NewFlashcard/>
-        <div>
+        <div style={outerDivStyle}>
           <button style={addFlashcardButtonStyle}> Add another flashcard </button>
         </div>
-        <div>
+        <div style={outerDivStyle}>
           <button style={createDeckButtonStyle}> Create deck </button>
         </div>
       </div>
@@ -55,7 +63,7 @@ const NewFlashcard = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
-      <div>
+      <div style={outerDivStyle}>
         <input style={newFlashcardLeftInputStyle}/> <input style={newFlashcardRightInputStyle}/>
       </div>
     );
