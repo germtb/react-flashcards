@@ -1,31 +1,38 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-const deckStyle = {
-  justifyContent: 'left',
+const tableStyle = {
+  justify: 'center',
+  display: 'flex',
   fontSize: '15',
+  borderCollapse: 'collapse',
+  width: '50%',
+  justifyContent: 'center'
 };
 
-const cardStyle = {
-  display: 'flex',
+const trStyle = {
+};
+
+const tdStyle = {
+  border: '1px solid black'
 };
 
 export const Deck = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     const cards = this.props.cards.map(c => (
-      <table border="1" borderColor="black" cellPadding="5" cellSpacing="5" style={cardStyle} key={c[0] + c[1]}>
-        <tbody>
-          <tr>
-            <td> {c[0]} </td>
-            <td> {c[1]} </td>
-          </tr>
-        </tbody>
-      </table>
+      <tr key={c[0] + c[1]} style={trStyle}>
+        <td style={tdStyle}> {c[0]} </td>
+        <td style={tdStyle}> {c[1]} </td>
+      </tr>
     ));
     return (
-      <div style={deckStyle}>
-        {cards}
+      <div>
+        <table cellPadding='5' cellSpacing="5" style={tableStyle}>
+          <tbody>
+            {cards}
+          </tbody>
+        </table>
       </div>
     );
   }
