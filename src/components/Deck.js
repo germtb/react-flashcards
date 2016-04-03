@@ -14,13 +14,18 @@ export const Deck = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     const cards = this.props.cards.map(c => (
-        <span style={cardStyle} key={c[0]}> {c[0] + ': ' + c[1]} </span>
+      <table border="1" borderColor="black" cellPadding="5" cellSpacing="5" style={cardStyle} key={c[0] + c[1]}>
+        <tbody>
+          <tr>
+            <td> {c[0]} </td>
+            <td> {c[1]} </td>
+          </tr>
+        </tbody>
+      </table>
     ));
     return (
       <div style={deckStyle}>
-        <div> {this.props.key} </div>
-        <div> {cards} </div>
-        <div> ------- </div>
+        {cards}
       </div>
     );
   }

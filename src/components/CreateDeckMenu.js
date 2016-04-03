@@ -2,8 +2,6 @@ import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import style from '../style';
 
-
-
 const decksMenuStyle = {
   position: 'absolute',
   left: 0,

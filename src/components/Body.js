@@ -5,7 +5,7 @@ import {CreateDeckMenu} from './CreateDeckMenu';
 import {DecksMenuContainer} from './DecksMenu';
 import {connect} from 'react-redux';
 
-export const Body = React.createClass({
+const Body = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     switch (this.props.menu) {
