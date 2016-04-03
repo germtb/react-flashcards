@@ -4,7 +4,8 @@ export const INITIAL_STATE = {
   correctAnswers: [],
   wrongAnswers: [],
   menu: 0,
-  decks: []
+  decks: {},
+  selectedDeck: ''
 };
 
 const setCards = function(state, cards) {
@@ -59,8 +60,16 @@ const setMenu = function(state, menu) {
 };
 
 const addDeck = function(state, deck) {
+  const newDeck = {};
+  newDeck[deck.id] = deck;
   return Object.assign({}, state, {
-    decks: [...state.decks, deck]
+    decks: Object.assign({}, state.decks, newDeck)
+  });
+};
+
+const selectDeck = function(state, deckId) {
+  return Object.assign({}, state, {
+    selectedDeck: deckId
   });
 };
 
@@ -80,6 +89,8 @@ export const reducer = function(state = INITIAL_STATE, action) {
     return setMenu(state, action.menu);
   case 'ADD_DECK':
     return addDeck(state, action.deck);
+  case 'SELECT_DECK':
+    return selectDeck(state, action.deckId);
   default:
     return state;
   }

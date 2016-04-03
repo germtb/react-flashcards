@@ -6,7 +6,6 @@ import {INITIAL_STATE} from '../src/reducer';
 describe('reducer', () => {
 
   it('handles SET_CARDS', () => {
-    const initialState = INITIAL_STATE;
     const action = {
       type: 'SET_CARDS',
       cards: [
@@ -14,7 +13,7 @@ describe('reducer', () => {
         ['Bye', 'さようなら']
       ]
     };
-    const nextState = reducer(initialState, action);
+    const nextState = reducer(INITIAL_STATE, action);
     expect(nextState.cards).to.deep.equal([
       ['Hello', 'こんにちは'],
       ['Bye', 'さようなら']
@@ -22,11 +21,12 @@ describe('reducer', () => {
   });
 
   it('handles GET_NEXT', () => {
-    const initialState = INITIAL_STATE;
-    initialState.cards = [
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      cards: [
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
-    ];
+      ]
+    });
     const action = {
       type: 'GET_NEXT'
     };
@@ -38,10 +38,11 @@ describe('reducer', () => {
   });
 
   it('handles correct SUBMIT_ANSWER', () => {
-    const initialState = INITIAL_STATE;
-    initialState.question = 'Hello';
-    initialState.answer = 'こんにちは';
-    initialState.input = 'こんにちは';
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      question: 'Hello',
+      answer: 'こんにちは',
+      input: 'こんにちは',
+    });
     const action = {
       type: 'SUBMIT_ANSWER'
     };
@@ -55,10 +56,11 @@ describe('reducer', () => {
   });
 
   it('handles wrong SUBMIT_ANSWER', () => {
-    const initialState = INITIAL_STATE;
-    initialState.question = 'Hello';
-    initialState.answer = 'こんにちは';
-    initialState.input = 'さようなら';
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      question: 'Hello',
+      answer: 'こんにちは',
+      input: 'さようなら',
+    });
     const action = {
       type: 'SUBMIT_ANSWER'
     };
@@ -72,46 +74,52 @@ describe('reducer', () => {
   });
 
   it('handles SET_INPUT', () => {
-    const initialState = INITIAL_STATE;
     const action = {
       type: 'SET_INPUT',
       input: 'unicorns'
     };
-    const nextState = reducer(initialState, action);
+    const nextState = reducer(INITIAL_STATE, action);
     expect(nextState.input).to.equal('unicorns');
   });
 
   it('handles SET_MENU', () => {
-    const initialState = INITIAL_STATE;
     const action = {
       type: 'SET_MENU',
       menu: 1
     };
-    const nextState = reducer(initialState, action);
+    const nextState = reducer(INITIAL_STATE, action);
     expect(nextState.menu).to.equal(1);
   });
 
   it('handles ADD_DECK', () => {
-    const initialState = INITIAL_STATE;
     const deck = {
       cards: [
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
       ],
-      name: 'Simple words'
+      id: 'Simple words'
     };
     const action = {
       type: 'ADD_DECK',
       deck: deck
     };
-    const nextState = reducer(initialState, action);
-    expect(nextState.decks[0]).to.deep.equal({
+    const nextState = reducer(INITIAL_STATE, action);
+    expect(nextState.decks['Simple words']).to.deep.equal({
       cards: [
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
       ],
-      name: 'Simple words'
+      id: 'Simple words'
     });
+  });
+
+  it('handles SELECT_DECK', () => {
+    const action = {
+      type: 'SELECT_DECK',
+      deckId: 'Some deck',
+    };
+    const nextState = reducer(INITIAL_STATE, action);
+    expect(nextState.selectedDeck).to.equal('Some deck');
   });
 
 });

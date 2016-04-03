@@ -1,5 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import store from '../index';
 
 const tableStyle = {
   justify: 'center',
@@ -19,6 +20,11 @@ const tdStyle = {
 
 export const Deck = React.createClass({
   mixins: [PureRenderMixin],
+  selectDeck: function(id) {
+    store.dispatch({
+
+    });
+  },
   render: function() {
     const cards = this.props.cards.map(c => (
       <tr key={c[0] + c[1]} style={trStyle}>
@@ -28,6 +34,7 @@ export const Deck = React.createClass({
     ));
     return (
       <div>
+        <button onClick={_ => this.selectDeck(this.props.id)}> Select </button>
         <table cellPadding='5' cellSpacing="5" style={tableStyle}>
           <tbody>
             {cards}
