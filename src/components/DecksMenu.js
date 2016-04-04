@@ -3,6 +3,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import {Deck} from './Deck';
 import {connect} from 'react-redux';
 import style from '../style';
+import R from 'ramda';
 
 const decksMenuStyle = {
   position: 'absolute',
@@ -17,7 +18,7 @@ const decksMenuStyle = {
 export const DecksMenu = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    const decks = this.props.decks.map(d => (<Deck cards={d.cards} key={d.name}/>));
+    const decks = R.map(d => (<Deck cards={d.cards} key={d.name}/>), this.props.decks);
     return (<div style={decksMenuStyle}> {decks} </div>);
   }
 });

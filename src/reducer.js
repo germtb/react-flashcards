@@ -60,10 +60,8 @@ const setMenu = function(state, menu) {
 };
 
 const addDeck = function(state, deck) {
-  const newDeck = {};
-  newDeck[deck.id] = deck;
   return Object.assign({}, state, {
-    decks: Object.assign({}, state.decks, newDeck)
+    decks: [...state.decks, deck]
   });
 };
 
