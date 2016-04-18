@@ -104,7 +104,8 @@ describe('reducer', () => {
       deck: deck
     };
     const nextState = reducer(INITIAL_STATE, action);
-    expect(nextState.decks['Simple words']).to.deep.equal({
+    console.log(nextState);
+    expect(nextState.decks[0]).to.deep.equal({
       cards: [
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
