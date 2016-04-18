@@ -33,6 +33,6 @@ store.dispatch({
       ['Hello', 'こんにちは'],
       ['Bye', 'さようなら'],
     ],
-    id: 'First deck'
+    name: 'First deck'
   }
 });

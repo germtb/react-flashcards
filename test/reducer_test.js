@@ -97,7 +97,7 @@ describe('reducer', () => {
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
       ],
-      id: 'Simple words'
+      name: 'Simple words'
     };
     const action = {
       type: 'ADD_DECK',
@@ -110,7 +110,7 @@ describe('reducer', () => {
         ['Hello', 'こんにちは'],
         ['Bye', 'さようなら']
       ],
-      id: 'Simple words'
+      name: 'Simple words'
     });
   });
 
