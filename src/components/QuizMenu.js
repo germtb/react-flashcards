@@ -26,7 +26,7 @@ const buttonStyle = {
   fontSize: '30'
 };
 
-export const QuizMenu = React.createClass({
+const QuizMenu = React.createClass({
   mixins: [PureRenderMixin],
   tryAgain: function() {
     store.dispatch({

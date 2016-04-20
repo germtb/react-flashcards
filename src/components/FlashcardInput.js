@@ -15,7 +15,7 @@ const inputStyle = {
   'fontSize': '25',
 };
 
-export const FlashcardInput = React.createClass({
+const FlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   submitAnswer: function() {
     store.dispatch({

@@ -15,7 +15,7 @@ const decksMenuStyle = {
   overflowY: 'scroll'
 };
 
-export const DecksMenu = React.createClass({
+const DecksMenu = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     const decks = map(d => (<Deck cards={d.cards} key={d.name}/>), this.props.decks);

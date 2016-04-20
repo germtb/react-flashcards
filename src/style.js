@@ -1,4 +1,4 @@
-const style = {
+export default {
   backgroundColor: '#FDFFFF',
   fontColor: '#000000',
 
@@ -8,5 +8,3 @@ const style = {
   headerBackgroundColor: '#7F8DA5',
   headerFontColor: '#000000',
 };
-
-export default style;

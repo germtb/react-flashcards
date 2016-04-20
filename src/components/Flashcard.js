@@ -8,7 +8,7 @@ const style = {
   fontSize: '75',
 };
 
-export const Flashcard = React.createClass({
+const Flashcard = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
