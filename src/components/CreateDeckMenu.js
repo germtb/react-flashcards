@@ -17,6 +17,11 @@ const outerDivStyle = {
   justifyContent: 'center',
 };
 
+const deckNameStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+};
+
 const newFlashcardLeftInputStyle = {
   left: 0
 };
@@ -44,6 +49,7 @@ export const CreateDeckMenu = React.createClass({
 
     return (
       <div style={decksMenuStyle}>
+        <input style={deckNameStyle} placeholder="Deck name"/>
         {newFlashcards}
         <NewFlashcard/>
         <div style={outerDivStyle}>

@@ -1,4 +1,4 @@
-import R from 'ramda';
+import {tail,head} from 'ramda';
 
 export const INITIAL_STATE = {
   correctAnswers: [],
@@ -19,9 +19,9 @@ const getNext = function(state) {
     return Object.assign({}, state);
   }
   return Object.assign({}, state, {
-    cards: R.tail(state.cards),
-    question: R.head(state.cards)[0],
-    answer: R.head(state.cards)[1]
+    cards: tail(state.cards),
+    question: head(state.cards)[0],
+    answer: head(state.cards)[1]
   });
 };
 

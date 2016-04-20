@@ -1,7 +1,7 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import store from '../index';
-import R from 'ramda';
+import {forEach} from 'ramda';
 
 const tableStyle = {
   justify: 'center',
@@ -27,7 +27,7 @@ export const Deck = React.createClass({
   },
   render: function() {
     const cards = [];
-    R.forEach(c => cards.push((
+    forEach(c => cards.push((
       <tr key={c[0] + c[1]} style={trStyle}>
         <td style={tdStyle}> {c[0]} </td>
         <td style={tdStyle}> {c[1]} </td>
