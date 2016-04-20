@@ -117,7 +117,7 @@ describe('reducer', () => {
   it('handles SELECT_DECK', () => {
     const action = {
       type: 'SELECT_DECK',
-      deckId: 'Some deck',
+      deckName: 'Some deck',
     };
     const nextState = reducer(INITIAL_STATE, action);
     expect(nextState.selectedDeck).to.equal('Some deck');

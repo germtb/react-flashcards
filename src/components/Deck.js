@@ -1,7 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
 import store from '../index';
-import {forEach} from 'ramda';
 
 const tableStyle = {
   justify: 'center',
@@ -21,18 +20,20 @@ const tdStyle = {
 
 export const Deck = React.createClass({
   mixins: [PureRenderMixin],
-  selectDeck: function(id) {
+  selectDeck: function(name) {
     store.dispatch({
+      type: 'SELECT_DECK',
+      deckName: name,
     });
   },
   render: function() {
-    const cards = [];
-    forEach(c => cards.push((
+    const cards = this.props.cards.map(c => (
       <tr key={c[0] + c[1]} style={trStyle}>
         <td style={tdStyle}> {c[0]} </td>
         <td style={tdStyle}> {c[1]} </td>
       </tr>
-    )), this.props.cards);
+    ));
+
     return (
       <div>
         <button onClick={_ => this.selectDeck(this.props.key)}> Select </button>

@@ -65,9 +65,9 @@ const addDeck = function(state, deck) {
   });
 };
 
-const selectDeck = function(state, deckId) {
+const selectDeck = function(state, deckName) {
   return Object.assign({}, state, {
-    selectedDeck: deckId
+    selectedDeck: deckName
   });
 };
 
@@ -88,7 +88,7 @@ export const reducer = function(state = INITIAL_STATE, action) {
   case 'ADD_DECK':
     return addDeck(state, action.deck);
   case 'SELECT_DECK':
-    return selectDeck(state, action.deckId);
+    return selectDeck(state, action.deckName);
   default:
     return state;
   }
