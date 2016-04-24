@@ -123,4 +123,79 @@ describe('reducer', () => {
     expect(nextState.selectedDeck).to.equal('Some deck');
   });
 
+  it('handles SET_NEW_FLASHCARD', () => {
+    const newFlashcard = ['hello', 'hola'];
+    const action = {
+      type: 'ADD_NEW_FLASHCARD',
+      newFlashcard: newFlashcard
+    };
+    const nextState = reducer(INITIAL_STATE, action);
+    expect(nextState.newFlashcard).to.deep.equal(['hello', 'hola']);
+  });
+
+  it('handles ADD_NEW_FLASHCARD_TO_DECK_IN_PROGRESS', () => {
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      newFlashcard: ['hello', 'hola'],
+      deckInProgress: {
+        cards: [
+          ['bye', 'adios']
+        ]
+      }
+    });
+    const action = {
+      type: 'ADD_NEW_FLASHCARD_TO_DECK_IN_PROGRESS'
+    };
+    const nextState = reducer(initialState, action);
+    expect(nextState.deckInProgress).to.deep.equal({
+      cards: [
+        ['bye', 'adios'],
+        ['hello', 'hola']
+      ]
+    });
+  });
+
+  it('handles SAVE_DECK_IN_PROGRESS_TO_DECKS', () => {
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      deckInProgress: {
+        name: 'test deck',
+        cards: [
+          ['bye', 'adios'],
+          ['hello', 'hola']
+        ]
+      }
+    });
+    const action = {
+      type: SAVE_DECK_IN_PROGRESS_TO_DECKS
+    };
+    const nextState = reducer(initialState, action);
+    expect(nextState.decks).to.deep.equal([{
+      name: 'test deck',
+      cards: [
+        ['bye', 'adios'],
+        ['hello', 'hola']
+      ]
+    }]);
+  });
+
+  it('handles DELETE_NEW_FLASHCARD_FROM_DECK_IN_PROGRESS', () => {
+    const initialState = Object.assign({}, INITIAL_STATE, {
+      deckInProgress: {
+        cards: [
+          ['bye', 'adios'],
+          ['hello', 'hola']
+        ]
+      }
+    });
+    const action = {
+      type: 'DELETE_NEW_FLASHCARD_FROM_DECK_IN_PROGRESS',
+      flashcard: ['bye', 'adios']
+    };
+    const nextState = reducer(initialState, action);
+    expect(nextState.deckInProgress).to.deep.equal({
+      cards: [
+        ['hello', 'hola']
+      ]
+    });
+  });
+
 });

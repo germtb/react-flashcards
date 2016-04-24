@@ -51,7 +51,7 @@ export const CreateDeckMenu = React.createClass({
       <div style={decksMenuStyle}>
         <input style={deckNameStyle} placeholder="Deck name"/>
         {newFlashcards}
-        <NewFlashcard/>
+        <NewFlashcardInput/>
         <div style={outerDivStyle}>
           <button style={addFlashcardButtonStyle}> Add another flashcard </button>
         </div>
@@ -63,12 +63,23 @@ export const CreateDeckMenu = React.createClass({
   }
 });
 
-const NewFlashcard = React.createClass({
+const NewFlashcardInput = React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
     return (
       <div style={outerDivStyle}>
         <input style={newFlashcardLeftInputStyle}/> <input style={newFlashcardRightInputStyle}/>
+      </div>
+    );
+  }
+});
+
+const NewFlashcard = React.createClass({
+  mixins: [PureRenderMixin],
+  render: function() {
+    return (
+      <div style={outerDivStyle}>
+        <div style={newFlashcardLeftInputStyle}> Left </div> <div style={newFlashcardRightInputStyle}> Right </div>
       </div>
     );
   }
