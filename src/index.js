@@ -9,7 +9,7 @@ export const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>
-      <Frame />
+      <Frame/>
   </Provider>,
   document.getElementById('app')
 );

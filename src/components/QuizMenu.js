@@ -43,13 +43,13 @@ const QuizMenu = React.createClass({
   render: function() {
     const nextCard = (
       <div>
-        <FlashcardContainer />
-        <FlashcardInputContainer />
+        <FlashcardContainer/>
+        <FlashcardInputContainer/>
       </div>
     );
     const result = (
       <div>
-        <FlashcardScoreContainer />
+        <FlashcardScoreContainer/>
         <div style={outerDivButtonStyle}>
           <button style={buttonStyle} onClick={this.tryAgain}> Try again </button>
         </div>
